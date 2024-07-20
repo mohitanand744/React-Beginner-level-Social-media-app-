@@ -349,6 +349,8 @@ body {
 .bottomNav {
   width: 100%;
   height: 8rem;
+  position: fixed;
+  bottom: 0;
   background: #fff;
   display: none;
   align-items: center;
