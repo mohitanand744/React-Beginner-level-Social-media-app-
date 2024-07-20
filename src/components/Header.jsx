@@ -10,7 +10,7 @@ export default function Header() {
     <>
       <div className="header_Container">
         <div className="logo_Container">
-          <img src="./src/assets/socialmediaLogo.png" alt="" />
+          <img src="./public/socialmediaLogo.png" alt="" />
         </div>
         <div className="search_container">
           <input type="text" placeholder="Search for friends..." />
@@ -19,7 +19,7 @@ export default function Header() {
           <IoIosNotifications className="notification" />
         </div>
         <div className="profile_Details">
-          <img src="./src/assets/Group 32.png" alt="" />
+          <img src="./public/Group 32.png" alt="" />
         </div>
         <div className={`Menu`} onClick={toggleFun}>
           <i
