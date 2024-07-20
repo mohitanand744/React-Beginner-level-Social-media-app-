@@ -15,8 +15,17 @@ body {
   background: #e5e5e5;
 }
 
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .hero_Container {
   display: flex;
+  gap: 1rem;
 }
 
 /***** Header Section *****/
@@ -97,7 +106,7 @@ body {
 /***** Sidebar Section *****/
 
 .sidebar_container {
-  width: 0rem;
+  width: 45rem;
   height: 82vh;
   margin-top: 1rem;
   overflow: hidden;
@@ -113,8 +122,8 @@ body {
   -moz-transition: width 0.2s ease;
   -ms-transition: width 0.2s ease;
   -o-transition: width 0.2s ease;
-  position: fixed;
-  z-index: 999999;
+  z-index: 99999999;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   & .profile_container {
     width: 90%;
@@ -210,18 +219,7 @@ body {
 .Menu {
   font-size: 3rem;
   font-weight: bold;
-}
-.rotate {
-  transition: 0.6s;
-  rotate: 180deg;
-  -webkit-transition: 0.6s;
-  -moz-transition: 0.6s;
-  -ms-transition: 0.6s;
-  -o-transition: 0.6s;
-}
-
-.toggleSideBar {
-  width: 35rem !important;
+  display: none;
 }
 
 /***** End Sidebar Section *****/
@@ -232,7 +230,7 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin: 2rem 2rem;
+  margin: 2rem 1rem;
   width: 100%;
   height: 11rem;
   padding: 7rem 1.5rem;
@@ -245,6 +243,7 @@ body {
   overflow-y: hidden;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   & .my-story {
     position: relative;
@@ -319,11 +318,107 @@ body {
 
 /***** End Status Section *****/
 
+/***** Right sidebar Section *****/
+
+.rightSidebar_container {
+  width: 25rem;
+  height: 82vh;
+  margin-top: 2rem;
+  background: #fff;
+  padding: 2rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  & .brand_logo {
+    width: 70%;
+    height: 5rem;
+    margin: auto;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/***** End Right sidebar Section *****/
+
+/***** bottom nav Section *****/
+
+.bottomNav {
+  width: 100%;
+  height: 8rem;
+  background: #fff;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  & .option {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & i {
+      font-size: 4rem;
+      color: #54b6e7;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
+
+      &:active {
+        scale: 0.7;
+      }
+    }
+
+    &:nth-child(3) {
+      & i {
+        color: red;
+      }
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+  }
+}
+
+/***** End bottom nav Section *****/
+
 /***** Responsiveness Section *****/
+
+@media screen and (width < 935px) {
+  html {
+    font-size: 55%;
+  }
+  .Menu {
+    display: block;
+  }
+  .sidebar_container {
+    width: 0rem;
+    position: fixed;
+  }
+  .toggleSideBar {
+    width: 32rem;
+  }
+}
 
 @media screen and (width < 848px) {
   html {
-    font-size: 57%;
+    font-size: 52%;
   }
 
   .header_Container {
@@ -331,9 +426,15 @@ body {
   }
 }
 
-@media screen and (width < 720px) {
+@media screen and (width < 680px) {
   .profile_Details {
     display: none;
+  }
+  .rightSidebar_container {
+    display: none;
+  }
+  .bottomNav {
+    display: flex;
   }
 }
 
