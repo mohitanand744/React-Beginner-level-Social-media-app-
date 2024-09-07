@@ -1,0 +1,98 @@
+[
+  {
+    "userId": 1,
+    "username": "_ashu_x7",
+    "profileImage": "./profileImg2.png",
+    "posts": [
+      {
+        "postId": 101,
+        "imageUrl": "/images/post1.jpg",
+        "caption": "Loving the sunset!",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 102,
+        "imageUrl": "/images/post2.jpg",
+        "caption": "Vacation vibes.",
+        "likes": 98,
+        "comments": [],
+        "timestamp": "2024-09-06T15:15:00Z"
+      }
+    ]
+  },
+  {
+    "userId": 2,
+    "username": "abhi_x7",
+    "profileImage": "./profileImg1.png",
+    "posts": [
+      {
+        "postId": 103,
+        "imageUrl": "/images/post3.jpg",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      }
+    ]
+  },
+  {
+    "userId": 3,
+    "username": "shubham_x7",
+    "profileImage": "./profileImg3.png",
+    "posts": [
+      {
+        "postId": 103,
+        "imageUrl": "/images/post3.jpg",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      }
+    ]
+  },
+  {
+    "userId": 4,
+    "username": "v3_Beast_x7",
+    "profileImage": "./profileImg5.png",
+    "posts": [
+      {
+        "postId": 103,
+        "imageUrl": "/images/post3.jpg",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      }
+    ]
+  }
+]

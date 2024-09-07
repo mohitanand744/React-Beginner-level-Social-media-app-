@@ -11,7 +11,15 @@ export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<App />} />
-      <Route path="profile" element={<Profile />} />
+      <Route path="profile/:id" element={<Profile />} />
+      <Route
+        path="*"
+        element={
+          <center>
+            <h1 className="mt-16 text-6xl font-bold text-red-600">Error 404</h1>
+          </center>
+        }
+      />
     </Route>
   )
 );

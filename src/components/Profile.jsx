@@ -3,12 +3,9 @@ import React from "react";
 const Profile = () => {
   return (
     <center>
-      <h1
-        className="h1
-      "
-      >
+      <p className="text-5xl mt-[5rem] fw-bold text-indigo-600 font-bold">
         Profile Page
-      </h1>
+      </p>
     </center>
   );
 };
