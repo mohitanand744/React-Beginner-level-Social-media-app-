@@ -19,7 +19,7 @@ export default function Header() {
           <IoIosNotifications className="notification" />
         </div>
         <div className="profile_Details">
-          <img src="/Group 32.png" alt="" />
+          <img src="/setting.png" alt="" />
         </div>
         <div className={`Menu`} onClick={toggleFun}>
           <i

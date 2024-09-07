@@ -1,18 +1,6 @@
-import { useRef } from "react";
-
 const Status = () => {
-  const ScrollEffect = useRef(null);
-
-  const scrollOnWheel = (e) => {
-    ScrollEffect.current.scrollLeft += e.deltaY > 0 ? 100 : -100;
-  };
-
   return (
-    <div
-      className="status_container"
-      ref={ScrollEffect}
-      onWheel={scrollOnWheel}
-    >
+    <div className="status_container">
       <div className="story my-story">
         <div className="story_img">
           <img
