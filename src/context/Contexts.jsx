@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { createContext } from "react";
+import users from "../Data/UsersData.json";
+import usersPosts from "../Data/UsersPosts.json";
 
 export const ManageState = createContext();
 
@@ -14,6 +16,8 @@ function WarpingComponent({ children }) {
       value={{
         toggleFun: toggleSetting,
         setting,
+        users,
+        usersPosts,
       }}
     >
       {children}

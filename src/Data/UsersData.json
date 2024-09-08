@@ -2,12 +2,12 @@
   {
     "userId": 1,
     "username": "_ashu_x7",
-    "profileImage": "./profileImg2.png",
+    "profileImage": "./ashuprofileImg2.png",
     "posts": [
       {
         "postId": 101,
-        "imageUrl": "/images/post1.jpg",
-        "caption": "Loving the sunset!",
+        "imageUrl": "/ashuPost1.png",
+        "caption": "Dehradun City in Uttarakhand",
         "likes": 120,
         "comments": [
           {
@@ -18,25 +18,83 @@
           }
         ],
         "timestamp": "2024-09-07T10:30:00Z"
-      },
+      }
+    ]
+  },
+  {
+    "userId": 6,
+    "username": "radhekrishna",
+    "profileImage": "./RadheKrishna.png",
+    "posts": [
       {
-        "postId": 102,
-        "imageUrl": "/images/post2.jpg",
-        "caption": "Vacation vibes.",
-        "likes": 98,
-        "comments": [],
-        "timestamp": "2024-09-06T15:15:00Z"
+        "postId": 103,
+        "imageUrl": "/post3.png",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      }
+    ]
+  },
+  {
+    "userId": 7,
+    "username": "prachiJha123",
+    "profileImage": "./prachiprofileImg.png",
+    "posts": [
+      {
+        "postId": 103,
+        "imageUrl": "/post4.png",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      }
+    ]
+  },
+  {
+    "userId": 8,
+    "username": "akashjha1233",
+    "profileImage": "./AkashprofileImg.png",
+    "posts": [
+      {
+        "postId": 103,
+        "imageUrl": "/post5.png",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
       }
     ]
   },
   {
     "userId": 2,
     "username": "abhi_x7",
-    "profileImage": "./profileImg1.png",
+    "profileImage": "./abhiPost2.png",
     "posts": [
       {
         "postId": 103,
-        "imageUrl": "/images/post3.jpg",
+        "imageUrl": "/abhiPost1.png",
         "caption": "Nature walk.",
         "likes": 200,
         "comments": [
@@ -54,11 +112,41 @@
   {
     "userId": 3,
     "username": "shubham_x7",
-    "profileImage": "./profileImg3.png",
+    "profileImage": "./ShubhamprofileImg.png",
     "posts": [
       {
         "postId": 103,
-        "imageUrl": "/images/post3.jpg",
+        "imageUrl": "/ShubhamPost1.png",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "imageUrl": "/ShubhamPost2.png",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "imageUrl": "/ShubhamPost3.png",
         "caption": "Nature walk.",
         "likes": 200,
         "comments": [
@@ -76,11 +164,93 @@
   {
     "userId": 4,
     "username": "v3_Beast_x7",
-    "profileImage": "./profileImg5.png",
+    "profileImage": "./v3_BeastProfile.png",
     "posts": [
       {
         "postId": 103,
-        "imageUrl": "/images/post3.jpg",
+        "imageUrl": "/v3_BeastPost1.png",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "imageUrl": "/v3_BeastPost2.png",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "imageUrl": "/v3_BeastPost3.png",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "imageUrl": "/v3_BeastPost4.png",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "imageUrl": "/v3_BeastPost5.png",
+        "caption": "Nature walk.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "Looks peaceful!",
+            "timestamp": "2024-09-07T14:00:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      }
+    ]
+  },
+  {
+    "userId": 5,
+    "username": "v3_Lover321",
+    "profileImage": "./v3_BeastPost5.png",
+    "posts": [
+      {
+        "postId": 103,
+        "imageUrl": "/post9.png",
         "caption": "Nature walk.",
         "likes": 200,
         "comments": [

@@ -1,10 +1,62 @@
 import React from "react";
+import useContextData from "../Custom/Hooks/useContextData";
 
 const RightSidebar = () => {
+  const { users } = useContextData();
+
   return (
-    <div className="rightSidebar_container">
-      <div className="brand_logo">
-        <h1 className="">Friends Request</h1>
+    <div className="rightSidebar_container overflow-x-hidden overflow-y-scroll fixed right-0 top-36">
+      <div className="userProfile cursor-pointer mt-5 flex justify-between items-center">
+        <div className="flex items-center gap-3">
+          <img
+            className="w-20 rounded-full"
+            src="https://media.licdn.com/dms/image/D4E03AQF_RrI-r8V9MA/profile-displayphoto-shrink_800_800/0/1705977291292?e=1726704000&v=beta&t=yik1OIfIn47We1ThM-g3cPE4VmMwLHsJ4ebA2MvjsJY"
+            alt=""
+          />
+          <div className="txt">
+            <div className="userName text-2xl font-bold">mohitanand123</div>
+            <p className="font-normal text-gray-600  text-lg">
+              software developer
+            </p>
+          </div>
+        </div>
+
+        <div className="font-bold text-blue-700 text-xl cursor-pointer">
+          Switch
+        </div>
+      </div>
+
+      <div className="my-10 pt-5 flex justify-between font-bold text-2xl text-gray-600">
+        <p>Suggested for you</p>
+        <a href="/">see all</a>
+      </div>
+
+      <div className="flex flex-col gap-10">
+        {users.map((user) => (
+          <div key={user.userId}>
+            <div className="userProfile cursor-pointer flex justify-between items-center">
+              <div className="flex items-center gap-3">
+                <img
+                  className="w-20 h-20 object-cover rounded-full "
+                  src={user.profileImage}
+                  alt=""
+                />
+                <div className="txt">
+                  <div className="userName text-2xl font-bold">
+                    {user.username}
+                  </div>
+                  <p className="font-bold text-xl text-gray-600">
+                    Suggested for you
+                  </p>
+                </div>
+              </div>
+
+              <div className="font-bold text-blue-700 text-xl cursor-pointer">
+                Follow
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -19,19 +19,15 @@ body {
   background: #e5e5e5;
 }
 
-#root {
-  max-width: 100vw;
-  min-height: 100vh;
-}
-
 .hero_Container {
-  max-width: 100%;
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
 
   .post-status {
-    flex: 1;
-    max-width: calc(100vw - 62rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -43,7 +39,7 @@ body {
   justify-content: space-between;
   padding: 2rem 2%;
   background: #a9def9;
-  gap: 5rem;
+  gap: 2rem;
 
   & .search_container {
     width: 100%;
@@ -118,7 +114,7 @@ body {
 
 .sidebar_container {
   margin-top: 2rem;
-  min-width: 33rem;
+  width: 33rem;
   height: 83vh;
   overflow: hidden;
   background: #ffff;
@@ -246,20 +242,13 @@ body {
 /***** Status Section *****/
 
 .status_container {
-  width: 100%;
-  min-height: 15rem;
+  max-height: 13rem;
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin: 2rem 0;
-  width: 100%;
-  height: 11rem;
+  margin-top: 11rem;
+  margin-bottom: 2rem;
   padding: 7rem 1.5rem;
-  border-radius: 2rem;
-  -webkit-border-radius: 2rem;
-  -moz-border-radius: 2rem;
-  -ms-border-radius: 2rem;
-  -o-border-radius: 2rem;
   background: #fff;
   overflow-y: hidden;
   overflow-x: scroll;
@@ -347,7 +336,7 @@ body {
 /***** Right sidebar Section *****/
 
 .rightSidebar_container {
-  min-width: 25rem;
+  min-width: 33rem;
   height: 80vh;
   background: #fff;
   margin-top: 2rem;
@@ -356,19 +345,26 @@ body {
   border-bottom-left-radius: 2rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  & .brand_logo {
-    width: 70%;
-    height: 5rem;
-    margin: auto;
-
-    & img {
-      width: 100%;
-      height: 100%;
-    }
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
 /***** End Right sidebar Section *****/
+
+/***** post Section *****/
+
+.bottom {
+  position: relative;
+}
+
+.likes {
+  position: absolute;
+  left: 1.4rem;
+  top: 4.4rem;
+}
+
+/***** End post Section *****/
 
 /***** bottom nav Section *****/
 
@@ -428,7 +424,7 @@ body {
 
 /***** Responsiveness Section *****/
 
-@media screen and (width < 935px) {
+@media screen and (width < 1290px) {
   html {
     font-size: 55%;
   }
@@ -442,6 +438,7 @@ body {
     height: 100vh;
     background: #00000070;
     position: fixed;
+    right: 0;
     z-index: 1;
     transition: 0.4s;
     -webkit-transition: 0.4s;
@@ -450,18 +447,11 @@ body {
     -o-transition: 0.4s;
   }
 
-  .hero_Container {
-    .post-status {
-      max-width: 68%;
-      margin: 0 auto;
-    }
-  }
-
   .sidebar_container {
     margin-top: 0;
     position: fixed;
     top: 9.9rem;
-    height: 100vh;
+    height: 90.8vh;
     left: -100%;
     position: fixed;
     border-radius: 0;
@@ -470,10 +460,15 @@ body {
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
-    top: 0;
+    top: 8.5rem;
   }
   .toggleSideBar {
     left: 0%;
+  }
+  .hero_Container {
+  }
+  .rightSidebar_container {
+    display: none;
   }
 }
 
@@ -491,24 +486,19 @@ body {
   .profile_Details {
     display: none;
   }
-  .rightSidebar_container {
-    display: none;
-  }
+
   .bottomNav {
     display: flex;
-  }
-
-  .hero_Container {
-    .post-status {
-      max-width: 95%;
-      margin: 0 auto;
-    }
   }
 }
 
 @media screen and (width < 450px) {
   html {
     font-size: 45.5%;
+  }
+
+  .sidebar_container {
+    height: 92vh;
   }
 }
 

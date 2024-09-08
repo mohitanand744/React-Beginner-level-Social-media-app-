@@ -8,7 +8,11 @@ const SideBar = () => {
   return (
     <>
       <div className={`fadedEffect ${setting ? "container" : ""}`}>
-        <div className={`sidebar_container ${setting ? "toggleSideBar" : ""}`}>
+        <div
+          className={`sidebar_container fixed left-0 top-36 ${
+            setting ? "toggleSideBar" : ""
+          }`}
+        >
           <Link to={"/profile"}>
             <div className="profile_container">
               <div className="profile_image_container">

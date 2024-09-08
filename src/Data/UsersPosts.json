@@ -1,0 +1,198 @@
+[
+  {
+    "postId": 101,
+    "username": "_ashu_x7",
+    "imageUrl": "/ashuPost1.png",
+    "caption": "Dehradun City in Uttarakhand",
+    "likes": 120,
+    "comments": [
+      {
+        "commentId": 1,
+        "username": "_ashu.x7",
+        "commentText": "Amazing view!",
+        "timestamp": "2024-09-07T12:45:00Z"
+      },
+      {
+        "commentId": 2,
+        "username": "john_doe",
+        "commentText": "Looks stunning!",
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "commentId": 3,
+        "username": "prachi_jha",
+        "commentText": "Beautiful place!",
+        "timestamp": "2024-09-07T13:15:00Z"
+      }
+    ],
+    "timestamp": "2024-09-07T10:30:00Z"
+  },
+  {
+    "postId": 102,
+    "username": "_abhi_x7",
+    "imageUrl": "/abhiPost2.png",
+    "caption": "Sunset at the beach",
+    "likes": 150,
+    "comments": [
+      {
+        "commentId": 4,
+        "username": "john_doe",
+        "commentText": "Beautiful!",
+        "timestamp": "2024-09-07T14:00:00Z"
+      },
+      {
+        "commentId": 5,
+        "username": "nature_lover",
+        "commentText": "So peaceful!",
+        "timestamp": "2024-09-07T14:30:00Z"
+      },
+      {
+        "commentId": 6,
+        "username": "krishna_devotee",
+        "commentText": "Incredible shot!",
+        "timestamp": "2024-09-07T15:00:00Z"
+      }
+    ],
+    "timestamp": "2024-09-07T11:00:00Z"
+  },
+  {
+    "postId": 103,
+    "username": "radhekrishna",
+    "imageUrl": "/RadheKrishna.png",
+    "caption": "Nature walk in the hills",
+    "likes": 200,
+    "comments": [
+      {
+        "commentId": 7,
+        "username": "krishna_devotee",
+        "commentText": "So calming!",
+        "timestamp": "2024-09-07T15:30:00Z"
+      },
+      {
+        "commentId": 8,
+        "username": "john_doe",
+        "commentText": "Breathtaking!",
+        "timestamp": "2024-09-07T16:00:00Z"
+      },
+      {
+        "commentId": 9,
+        "username": "v3_Beast_x7",
+        "commentText": "Would love to visit!",
+        "timestamp": "2024-09-07T16:30:00Z"
+      }
+    ],
+    "timestamp": "2024-09-07T11:30:00Z"
+  },
+  {
+    "postId": 104,
+    "username": "prachi_jha",
+    "imageUrl": "/prachiprofileImg.png",
+    "caption": "Morning yoga session",
+    "likes": 175,
+    "comments": [
+      {
+        "commentId": 10,
+        "username": "prachi_jha",
+        "commentText": "Feeling refreshed just looking at it!",
+        "timestamp": "2024-09-07T12:00:00Z"
+      },
+      {
+        "commentId": 11,
+        "username": "john_doe",
+        "commentText": "Yoga bliss!",
+        "timestamp": "2024-09-07T12:30:00Z"
+      },
+      {
+        "commentId": 12,
+        "username": "_ashu_x7",
+        "commentText": "Inspiring!",
+        "timestamp": "2024-09-07T13:00:00Z"
+      }
+    ],
+    "timestamp": "2024-09-07T12:00:00Z"
+  },
+  {
+    "postId": 106,
+    "username": "akashjha1233",
+    "imageUrl": "/AkashprofileImg.png",
+    "caption": "Biking through the mountains",
+    "likes": 300,
+    "comments": [
+      {
+        "commentId": 16,
+        "username": "john_doe",
+        "commentText": "This looks like so much fun!",
+        "timestamp": "2024-09-07T15:00:00Z"
+      },
+      {
+        "commentId": 17,
+        "username": "v3_Beast_x7",
+        "commentText": "Adventure awaits!",
+        "timestamp": "2024-09-07T15:30:00Z"
+      },
+      {
+        "commentId": 18,
+        "username": "nature_lover",
+        "commentText": "Amazing ride!",
+        "timestamp": "2024-09-07T16:00:00Z"
+      }
+    ],
+    "timestamp": "2024-09-07T13:00:00Z"
+  },
+  {
+    "postId": 108,
+    "username": "shubham_x7",
+    "imageUrl": "/ShubhamPost2.png",
+    "caption": "Mountain peaks covered in snow",
+    "likes": 250,
+    "comments": [
+      {
+        "commentId": 22,
+        "username": "john_doe",
+        "commentText": "Majestic!",
+        "timestamp": "2024-09-07T18:00:00Z"
+      },
+      {
+        "commentId": 23,
+        "username": "nature_lover",
+        "commentText": "What a view!",
+        "timestamp": "2024-09-07T18:30:00Z"
+      },
+      {
+        "commentId": 24,
+        "username": "v3_Beast_x7",
+        "commentText": "Love the snow!",
+        "timestamp": "2024-09-07T19:00:00Z"
+      }
+    ],
+    "timestamp": "2024-09-07T14:00:00Z"
+  },
+  {
+    "postId": 110,
+    "username": "v3_Beast_x7",
+    "imageUrl": "/v3_BeastPost1.png",
+    "caption": "Forest trail in autumn",
+    "likes": 230,
+    "comments": [
+      {
+        "commentId": 28,
+        "username": "john_doe",
+        "commentText": "So colorful!",
+        "timestamp": "2024-09-07T20:30:00Z"
+      },
+      {
+        "commentId": 29,
+        "username": "nature_lover",
+        "commentText": "Love the leaves!",
+        "timestamp": "2024-09-07T21:00:00Z"
+      },
+      {
+        "commentId": 30,
+        "username": "krishna_devotee",
+        "commentText": "Autumn beauty!",
+        "timestamp": "2024-09-07T21:30:00Z"
+      }
+    ],
+    "timestamp": "2024-09-07T15:00:00Z"
+  }
+]
