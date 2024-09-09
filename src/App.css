@@ -474,7 +474,7 @@ body {
 
 @media screen and (width < 848px) {
   html {
-    font-size: 52%;
+    font-size: 50%;
   }
 
   .header_Container {
