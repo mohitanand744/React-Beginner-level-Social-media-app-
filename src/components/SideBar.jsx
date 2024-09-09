@@ -13,7 +13,7 @@ const SideBar = () => {
             setting ? "toggleSideBar" : ""
           }`}
         >
-          <Link to={"/profile"}>
+          <Link to={"/profile/loginAc"}>
             <div className="profile_container">
               <div className="profile_image_container">
                 <img

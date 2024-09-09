@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function BottomNav() {
   return (
@@ -12,14 +13,15 @@ function BottomNav() {
       <div className="option">
         <i className="fa-solid fa-heart"></i>
       </div>{" "}
-      <div className="option">
-        {" "}
-        <img
-          width={120}
-          src="https://media.licdn.com/dms/image/D4E03AQF_RrI-r8V9MA/profile-displayphoto-shrink_800_800/0/1705977291292?e=1726704000&v=beta&t=yik1OIfIn47We1ThM-g3cPE4VmMwLHsJ4ebA2MvjsJY"
-          alt=""
-        />
-      </div>
+      <Link to={"/profile/mohitanand123"}>
+        <div className="option">
+          {" "}
+          <img
+            src="https://media.licdn.com/dms/image/D4E03AQF_RrI-r8V9MA/profile-displayphoto-shrink_800_800/0/1705977291292?e=1726704000&v=beta&t=yik1OIfIn47We1ThM-g3cPE4VmMwLHsJ4ebA2MvjsJY"
+            alt=""
+          />
+        </div>
+      </Link>
     </div>
   );
 }

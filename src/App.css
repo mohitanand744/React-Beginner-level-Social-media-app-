@@ -482,6 +482,14 @@ body {
   }
 }
 
+@media screen and (width < 738px) {
+  .status_container {
+    margin: 0;
+    margin-top: 8.6rem;
+    padding-bottom: 8rem;
+  }
+}
+
 @media screen and (width < 680px) {
   .profile_Details {
     display: none;
@@ -493,10 +501,6 @@ body {
 }
 
 @media screen and (width < 450px) {
-  html {
-    font-size: 45.5%;
-  }
-
   .sidebar_container {
     height: 92vh;
   }

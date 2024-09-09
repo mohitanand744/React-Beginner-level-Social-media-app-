@@ -7,7 +7,7 @@ const PostList = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-content-center w-full">
+      <div className="flex flex-col justify-content-center w-full mb-[12rem] sm:mb-0">
         {usersPosts.map((post) => (
           <Post
             key={post.postId}
@@ -16,6 +16,12 @@ const PostList = () => {
             caption={post.caption}
           />
         ))}
+
+        <center>
+          <h2 className="mt-5 text-2xl font-bold text-gray-600">
+            Loading More...
+          </h2>
+        </center>
       </div>
     </>
   );

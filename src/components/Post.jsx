@@ -6,6 +6,7 @@ import {
   faComment,
   faBookmark,
 } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 
 const Post = ({ userPost, key, username, caption }) => {
   return (
@@ -15,11 +16,13 @@ const Post = ({ userPost, key, username, caption }) => {
     >
       <div className="top p-4 w-full flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <img
-            className="w-20 h-20 object-cover rounded-full"
-            src={userPost}
-            alt="profileImg"
-          />
+          <Link to={`/profile/${username}`}>
+            <img
+              className="w-20 h-20 object-cover rounded-full"
+              src={userPost}
+              alt="profileImg"
+            />
+          </Link>
           <div className="txt">
             <p className="font-bold text-2xl">{username}</p>
             <p className="text-xl font-normal text-gray-700">{caption}</p>

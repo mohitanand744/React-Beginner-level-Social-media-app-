@@ -16,7 +16,7 @@ export const router = createBrowserRouter(
         path="*"
         element={
           <center>
-            <h1 className="mt-16 text-6xl font-bold text-red-600">Error 404</h1>
+            <h1 className="mt-80 text-6xl font-bold text-red-600">Error 404</h1>
           </center>
         }
       />
