@@ -14,7 +14,7 @@ const Post = ({ userPost, key, username, caption }) => {
       key={key}
       className="post overflow-hidden bg-white w-full md:w-[60rem] lg:w-[48rem] xl:w-[60rem] mx-auto"
     >
-      <div className="top p-4 w-full flex justify-between items-center">
+      <div className="top p-4 w-full flex justify-between ">
         <div className="flex items-center gap-3">
           <Link to={`/profile/${username}`}>
             <img
@@ -28,7 +28,7 @@ const Post = ({ userPost, key, username, caption }) => {
             <p className="text-xl font-normal text-gray-700">{caption}</p>
           </div>
         </div>
-        <div className="text-3xl font-bold pr-7">...</div>
+        <div className="text-4xl font-bold pr-7">...</div>
       </div>
 
       <div className="img-container w-full h-[55rem] flex justify-center">

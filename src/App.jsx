@@ -13,7 +13,11 @@ function App() {
           <Status />
           <PostList />
         </div>
-        <RightSidebar />
+        <RightSidebar
+          margin="mt-10"
+          hight="h-[80vh]"
+          borderRadius="rounded-l-3xl"
+        />
       </div>
     </>
   );

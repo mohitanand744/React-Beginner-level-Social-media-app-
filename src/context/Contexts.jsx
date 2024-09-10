@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { createContext } from "react";
 import users from "../Data/UsersData.json";
 import usersPosts from "../Data/UsersPosts.json";
+import loginAccount from "../Data/LoginAccount.json";
 import { useLocation } from "react-router-dom";
 
 export const ManageState = createContext();
@@ -24,6 +25,7 @@ function WarpingComponent({ children }) {
         setting,
         users,
         usersPosts,
+        loginAccount,
       }}
     >
       {children}

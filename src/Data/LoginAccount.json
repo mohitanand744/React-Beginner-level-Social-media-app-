@@ -1,0 +1,24 @@
+[
+  {
+    "userId": 123,
+    "username": "mohitanand123",
+    "profileImage": "/loginUserProfile.jpeg",
+    "posts": [
+      {
+        "postId": 101,
+        "imageUrl": "/ashuPost1.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      }
+    ]
+  }
+]

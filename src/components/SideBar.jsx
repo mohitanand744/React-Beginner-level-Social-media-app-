@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
-import { ManageState } from "../context/Contexts";
+import React from "react";
 import { Link } from "react-router-dom";
+import useContextData from "../Custom/Hooks/useContextData";
 
 const SideBar = () => {
-  const { setting } = useContext(ManageState);
+  const { loginAccount, setting } = useContextData();
+
+  const { profileImage, username } = loginAccount[0];
+
+  console.log(loginAccount);
 
   return (
     <>
@@ -16,12 +20,9 @@ const SideBar = () => {
           <Link to={"/profile/loginAc"}>
             <div className="profile_container">
               <div className="profile_image_container">
-                <img
-                  src="https://media.licdn.com/dms/image/D4E03AQF_RrI-r8V9MA/profile-displayphoto-shrink_800_800/0/1705977291292?e=1726704000&v=beta&t=yik1OIfIn47We1ThM-g3cPE4VmMwLHsJ4ebA2MvjsJY"
-                  alt=""
-                />
+                <img src={profileImage} alt="" />
               </div>
-              <p className="userName">mohit-anand123</p>
+              <p className="userName">{username}</p>
             </div>
           </Link>
           <div className="Explore_container">

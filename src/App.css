@@ -337,12 +337,8 @@ body {
 
 .rightSidebar_container {
   min-width: 33rem;
-  height: 80vh;
   background: #fff;
-  margin-top: 2rem;
   padding: 2rem;
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   &::-webkit-scrollbar {
@@ -365,6 +361,20 @@ body {
 }
 
 /***** End post Section *****/
+
+/***** profile Section *****/
+
+.profile {
+  min-height: 100vh;
+
+  .profileImg {
+    width: 17rem;
+    height: 17rem;
+    margin-top: 30rem;
+  }
+}
+
+/***** End profile Section *****/
 
 /***** bottom nav Section *****/
 
@@ -424,7 +434,7 @@ body {
 
 /***** Responsiveness Section *****/
 
-@media screen and (width < 1290px) {
+@media screen and (width < 1280px) {
   html {
     font-size: 55%;
   }
@@ -498,11 +508,25 @@ body {
   .bottomNav {
     display: flex;
   }
+
+  .profile {
+    .profileImg {
+      width: 14rem;
+      height: 14rem;
+    }
+  }
 }
 
 @media screen and (width < 450px) {
   .sidebar_container {
     height: 92vh;
+  }
+
+  .profile {
+    .profileImg {
+      width: 12rem;
+      height: 12rem;
+    }
   }
 }
 

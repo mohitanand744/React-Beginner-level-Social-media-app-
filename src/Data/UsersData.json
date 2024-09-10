@@ -2,7 +2,7 @@
   {
     "userId": 1,
     "username": "_ashu_x7",
-    "profileImage": "./ashuprofileImg2.png",
+    "profileImage": "/ashuprofileImg2.png",
     "posts": [
       {
         "postId": 101,
@@ -24,7 +24,7 @@
   {
     "userId": 6,
     "username": "radhekrishna",
-    "profileImage": "./RadheKrishna.png",
+    "profileImage": "/RadheKrishna.png",
     "posts": [
       {
         "postId": 103,
@@ -46,7 +46,7 @@
   {
     "userId": 7,
     "username": "prachiJha123",
-    "profileImage": "./prachiprofileImg.png",
+    "profileImage": "/prachiprofileImg.png",
     "posts": [
       {
         "postId": 103,
@@ -68,7 +68,7 @@
   {
     "userId": 8,
     "username": "akashjha1233",
-    "profileImage": "./AkashprofileImg.png",
+    "profileImage": "/AkashprofileImg.png",
     "posts": [
       {
         "postId": 103,
@@ -90,7 +90,7 @@
   {
     "userId": 2,
     "username": "abhi_x7",
-    "profileImage": "./abhiPost2.png",
+    "profileImage": "/abhiPost2.png",
     "posts": [
       {
         "postId": 103,
@@ -112,7 +112,7 @@
   {
     "userId": 3,
     "username": "shubham_x7",
-    "profileImage": "./ShubhamprofileImg.png",
+    "profileImage": "/ShubhamprofileImg.png",
     "posts": [
       {
         "postId": 103,
@@ -164,7 +164,7 @@
   {
     "userId": 4,
     "username": "v3_Beast_x7",
-    "profileImage": "./v3_BeastProfile.png",
+    "profileImage": "/v3_BeastProfile.png",
     "posts": [
       {
         "postId": 103,
@@ -246,7 +246,7 @@
   {
     "userId": 5,
     "username": "v3_Lover321",
-    "profileImage": "./v3_BeastPost5.png",
+    "profileImage": "/v3_BeastPost5.png",
     "posts": [
       {
         "postId": 103,
