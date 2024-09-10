@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import RightSidebar from "./RightSidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPencil } from "@fortawesome/free-solid-svg-icons";
+import { faPencil, faCamera } from "@fortawesome/free-solid-svg-icons";
 
 const Profile = () => {
   const { username } = useParams();
@@ -11,7 +11,7 @@ const Profile = () => {
     <section className="flex">
       {/* Profile content column */}
 
-      <div className="profile w-full">
+      <div className="profile w-full bg-white">
         <div className="profileCoverImg relative flex justify-center w-full">
           <img
             className="w-full h-full mt-32 lg:object-cover object-contain"
@@ -21,7 +21,7 @@ const Profile = () => {
 
           <FontAwesomeIcon
             icon={faPencil}
-            className="absolute text-white bottom-10 right-10 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-75"
+            className="absolute text-white bottom-10 right-10 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-500"
           />
 
           {/* Centering the profile image */}
@@ -31,6 +31,26 @@ const Profile = () => {
               src="/loginUserProfile.jpeg"
               alt=""
             />
+
+            <FontAwesomeIcon
+              icon={faCamera}
+              className="text-2xl text-white absolute top-48 right-7 bg-[#052130] p-3 rounded-full active:scale-[0.88] transition-all duration-500 "
+            />
+          </div>
+        </div>
+
+        <div className="bio mt-36">
+          <p className="text-center my-5 text-4xl font-bold">mohitanand123</p>
+          <p className="text-center text-3xl mx-auto w-[40rem]">
+            Frontend Developer @WeboConnect | Team Work Makes The Dream Work .
+          </p>
+        </div>
+
+        <div className="flex flex-col items-center mt-10 overflow-hidden">
+          <div className="followers_following flex gap-10 md:gap-16 text-3xl font-bold mx-4 border-[2.5px] border-[#3cbeff]  w-fit p-5 px-6 md:px-9 rounded-full bg-white">
+            <p> 12 Posts</p>
+            <p>1,433 Followers</p>
+            <p>326 Following</p>
           </div>
         </div>
       </div>
