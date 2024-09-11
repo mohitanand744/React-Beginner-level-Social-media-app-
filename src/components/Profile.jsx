@@ -113,7 +113,7 @@ const Profile = () => {
             {loginAccount[0].posts.map((post) => (
               <>
                 <img
-                  className="w-52 h-52 object-cover"
+                  className="w-60 h-60 object-cover"
                   src={post.imageUrl}
                   alt=""
                 />
