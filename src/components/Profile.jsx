@@ -52,7 +52,7 @@ const Profile = () => {
             {username === "loginAc" ? (
               <FontAwesomeIcon
                 icon={faCamera}
-                className="text-2xl cameraIcon text-white absolute top-48 right-7 bg-[#052130] p-3 rounded-full active:scale-[0.88] transition-all duration-500 "
+                className="text-2xl cameraIcon border-white border-2 text-white absolute top-48 right-7 bg-[#052130] p-3 rounded-full active:scale-[0.88] transition-all duration-500 "
               />
             ) : (
               ""
