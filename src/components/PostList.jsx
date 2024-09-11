@@ -8,9 +8,9 @@ const PostList = () => {
   return (
     <>
       <div className="flex flex-col justify-content-center w-full mb-[12rem] sm:mb-0">
-        {usersPosts.map((post) => (
+        {usersPosts.map((post, i) => (
           <Post
-            key={post.postId}
+            key={i}
             username={post.username}
             userPost={post.imageUrl}
             caption={post.caption}

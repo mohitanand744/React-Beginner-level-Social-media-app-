@@ -10,7 +10,11 @@ const Profile = () => {
   const { username } = useParams();
   const [activeTab, setActiveTab] = useState("posts");
 
-  const { loginAccount } = useContextData();
+  const { loginAccount, users } = useContextData();
+
+  const userProfile = users.filter(
+    (profileImg) => profileImg.username === username
+  );
 
   return (
     <section className="flex">
@@ -24,23 +28,35 @@ const Profile = () => {
             alt="Profile Cover"
           />
 
-          <FontAwesomeIcon
-            icon={faPencil}
-            className="absolute text-white bottom-10 right-10 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-500"
-          />
+          {username === "loginAc" ? (
+            <FontAwesomeIcon
+              icon={faPencil}
+              className="absolute text-white bottom-10 right-10 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-500"
+            />
+          ) : (
+            ""
+          )}
 
           {/* Centering the profile image */}
           <div className="profileImg bg-[#3cbeff] rounded-full absolute p-2 inset-x-0 mx-auto -bottom-24 md:-bottom-32 w-[150px] h-[150px]">
             <img
               className="w-full h-full object-cover rounded-full border-[4px] border-white"
-              src="/loginUserProfile.jpeg"
+              src={
+                username === "loginAc"
+                  ? "/loginUserProfile.jpeg"
+                  : userProfile[0].profileImage
+              }
               alt=""
             />
 
-            <FontAwesomeIcon
-              icon={faCamera}
-              className="text-2xl cameraIcon text-white absolute top-48 right-7 bg-[#052130] p-3 rounded-full active:scale-[0.88] transition-all duration-500 "
-            />
+            {username === "loginAc" ? (
+              <FontAwesomeIcon
+                icon={faCamera}
+                className="text-2xl cameraIcon text-white absolute top-48 right-7 bg-[#052130] p-3 rounded-full active:scale-[0.88] transition-all duration-500 "
+              />
+            ) : (
+              ""
+            )}
           </div>
         </div>
 
@@ -102,24 +118,55 @@ const Profile = () => {
                 }}
               >
                 <a className="nav-link text-gray-700" href="#">
-                  <i class="fa-solid fa-lock text-[#84d6ff] "></i> Only For
+                  <i className="fa-solid fa-lock text-[#84d6ff] "></i> Only For
                   Members
                 </a>
               </li>
             </ul>
           </div>
 
-          <div className="posts w-full justify-center flex gap-2 flex-wrap mt-5">
-            {loginAccount[0].posts.map((post) => (
-              <>
-                <img
-                  className="w-60 h-60 object-cover"
-                  src={post.imageUrl}
-                  alt=""
-                />
-              </>
-            ))}
-          </div>
+          {activeTab === "posts" ? (
+            <>
+              <div className="posts w-full justify-center flex gap-2 flex-wrap mt-5">
+                {loginAccount[0].posts.map((post, i) => (
+                  <>
+                    <img
+                      className="w-60 h-60 md:w-80 md:h-80 object-cover"
+                      key={i}
+                      src={post.imageUrl}
+                      alt=""
+                    />
+                  </>
+                ))}
+              </div>
+            </>
+          ) : (
+            ""
+          )}
+
+          {activeTab === "reels" ? (
+            <>
+              <center>
+                <h1 className="text-red-500 text-3xl mt-5 font-semibold">
+                  Still Working on {activeTab}...
+                </h1>
+              </center>
+            </>
+          ) : (
+            ""
+          )}
+
+          {activeTab === "about" ? (
+            <>
+              <center>
+                <h1 className="text-red-500 text-3xl mt-5 font-semibold">
+                  Still Working on {activeTab}...
+                </h1>
+              </center>
+            </>
+          ) : (
+            ""
+          )}
         </div>
       </div>
 

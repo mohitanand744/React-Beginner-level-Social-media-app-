@@ -36,8 +36,8 @@ const RightSidebar = ({ hight, margin, borderRadius }) => {
       </div>
 
       <div className="flex flex-col gap-10">
-        {users.map((user) => (
-          <div key={user.userId}>
+        {users.map((user, i) => (
+          <div key={i}>
             <div className="userProfile cursor-pointer flex justify-between items-center">
               <Link to={`/profile/${user.username}`}>
                 <div className="flex items-center gap-3">

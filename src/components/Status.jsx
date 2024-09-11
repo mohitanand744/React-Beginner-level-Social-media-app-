@@ -15,9 +15,9 @@ const Status = () => {
         <p className="StatusUserName">mohitanand123</p>
       </div>
 
-      {users.map((user) => {
+      {users.map((user, i) => {
         return (
-          <div key={user.userId} className="story  cursor-pointer">
+          <div key={i} className="story  cursor-pointer">
             <div className="story_img">
               <img src={user.profileImage} alt="" />
             </div>
