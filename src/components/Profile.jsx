@@ -54,7 +54,7 @@ const Profile = () => {
         </div>
 
         <div className="flex flex-col items-center mt-10 overflow-hidden">
-          <div className="followers_following flex gap-10 md:gap-16 text-xl sm:text-3xl font-bold text-gray-700 mx-4 border-[2.5px] border-[#3cbeff]  w-fit py-4 px-6 md:px-9 rounded-full bg-white">
+          <div className="followers_following flex gap-10 md:gap-16 text-[1.4rem] sm:text-3xl font-bold text-gray-700 mx-4 border-[2.5px] border-[#3cbeff]  w-fit py-4 px-6 md:px-9 rounded-full bg-white">
             <p> 12 Posts</p>
             <p>1,433 Followers</p>
             <p>326 Following</p>
