@@ -13,7 +13,7 @@ function BottomNav() {
       <div className="option">
         <i className="fa-solid fa-heart"></i>
       </div>{" "}
-      <Link to={"/profile/mohitanand123"}>
+      <Link to={"/profile/loginAc"}>
         <div className="option">
           {" "}
           <img
