@@ -1,4 +1,5 @@
 import "./App.css";
+import NavFooter from "./components/NavFooter";
 import PostList from "./components/PostList";
 import RightSidebar from "./components/RightSidebar";
 import SideBar from "./components/SideBar";
@@ -12,6 +13,7 @@ function App() {
         <div className="post-status">
           <Status />
           <PostList />
+          <NavFooter />
         </div>
         <RightSidebar
           margin="mt-10"

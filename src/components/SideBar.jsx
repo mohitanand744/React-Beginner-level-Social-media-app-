@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useContextData from "../Custom/Hooks/useContextData";
 
 const SideBar = () => {
-  const { loginAccount, setting } = useContextData();
+  const { loginAccount, togglesetting } = useContextData();
 
   const { profileImage, username } = loginAccount[0];
 
@@ -11,10 +11,10 @@ const SideBar = () => {
 
   return (
     <>
-      <div className={`fadedEffect ${setting ? "container" : ""}`}>
+      <div className={`fadedEffect  ${togglesetting ? "container" : ""}`}>
         <div
-          className={`sidebar_container fixed left-0 top-36 ${
-            setting ? "toggleSideBar" : ""
+          className={`sidebar_container md:border-4 md:border-[#84d6ff] border-l-0 fixed left-0 top-36 ${
+            togglesetting ? "toggleSideBar" : ""
           }`}
         >
           <Link to={"/profile/loginAc"}>

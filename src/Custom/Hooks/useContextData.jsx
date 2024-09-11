@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { ManageState } from "../../context/Contexts";
 
 const useContextData = () => {
-  const { setting, users, usersPosts, loginAccount } = useContext(ManageState);
+  const { togglesetting, users, usersPosts, loginAccount } =
+    useContext(ManageState);
   return {
-    setting,
+    togglesetting,
     users,
     usersPosts,
     loginAccount,

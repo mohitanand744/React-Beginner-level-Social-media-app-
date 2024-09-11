@@ -5,7 +5,7 @@ import { ManageState } from "../context/Contexts";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const { toggleFun, setting } = useContext(ManageState);
+  const { toggleFun, togglesetting } = useContext(ManageState);
 
   return (
     <>
@@ -22,15 +22,13 @@ export default function Header() {
           <IoIosNotifications className="notification" />
         </div>
 
-        <div className="profile_Details">
-          <img className="w-[7rem]" src="/setting.png" alt="" />
-        </div>
-        <div className={`Menu`} onClick={toggleFun}>
-          <i
-            className={` ${
-              setting ? "fa-solid fa-delete-left" : "fa-solid fa-bars"
-            }`}
-          ></i>
+        <div className="profile_Details xl:hidden">
+          <img
+            onClick={toggleFun}
+            className="w-[7rem] active:scale-[0.89] transition-all duration-300 ease-in-out"
+            src="/setting.png"
+            alt=""
+          />
         </div>
       </div>
     </>

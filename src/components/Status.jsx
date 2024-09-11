@@ -4,7 +4,7 @@ const Status = () => {
   const { users } = useContextData();
 
   return (
-    <div className="status_container lg:rounded-3xl w-full  mx-auto lg:w-[100rem] xl:w-[82rem]">
+    <div className="status_container md:border-4 md:border-[#84d6ff] lg:rounded-3xl w-full  mx-auto lg:w-[100rem] xl:w-[82rem]">
       <div className="story my-story  cursor-pointer">
         <div className="story_img">
           <img

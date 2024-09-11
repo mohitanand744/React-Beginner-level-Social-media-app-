@@ -9,7 +9,7 @@ const RightSidebar = ({ hight, margin, borderRadius }) => {
 
   return (
     <div
-      className={`rightSidebar_container ${hight} ${borderRadius} ${margin} overflow-x-hidden overflow-y-scroll fixed right-0 top-36`}
+      className={`rightSidebar_container border-4 border-[#84d6ff] border-r-0 ${hight} ${borderRadius} ${margin} overflow-x-hidden overflow-y-scroll fixed right-0 top-36`}
     >
       <div className="userProfile cursor-pointer mt-5 flex justify-between items-center">
         <Link to={"/profile/loginAc"}>

@@ -6,7 +6,157 @@
     "posts": [
       {
         "postId": 101,
-        "imageUrl": "/ashuPost1.png",
+        "imageUrl": "/loginUserProfile.jpeg",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ui1.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ui2.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ui3.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ui4.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ui5.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ui6.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ui7.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ui8.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ui9.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ui10.png",
         "caption": "Dehradun City in Uttarakhand",
         "likes": 120,
         "comments": [

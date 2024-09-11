@@ -372,6 +372,14 @@ body {
     height: 17rem;
     margin-top: 30rem;
   }
+  .postContainer {
+    .active {
+      a {
+        border-bottom: 2px solid #84d6ff !important;
+        color: #84d6ff !important;
+      }
+    }
+  }
 }
 
 /***** End profile Section *****/
@@ -450,17 +458,16 @@ body {
     position: fixed;
     right: 0;
     z-index: 1;
-    transition: 0.4s;
-    -webkit-transition: 0.4s;
-    -moz-transition: 0.4s;
-    -ms-transition: 0.4s;
-    -o-transition: 0.4s;
+    transition: 1.6s;
+    -webkit-transition: 1.6s;
+    -moz-transition: 1.6s;
+    -ms-transition: 1.6s;
+    -o-transition: 1.6s;
   }
 
   .sidebar_container {
     margin-top: 0;
     position: fixed;
-    top: 9.9rem;
     height: 90.8vh;
     left: -100%;
     position: fixed;
@@ -470,13 +477,17 @@ body {
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
-    top: 8.5rem;
+    top: 8.2rem;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
   }
   .toggleSideBar {
     left: 0%;
   }
-  .hero_Container {
-  }
+
   .rightSidebar_container {
     display: none;
   }
@@ -501,18 +512,20 @@ body {
 }
 
 @media screen and (width < 680px) {
-  .profile_Details {
-    display: none;
-  }
-
   .bottomNav {
     display: flex;
   }
-
+  .navfooteroptionContainer {
+    display: none;
+  }
   .profile {
     .profileImg {
       width: 14rem;
       height: 14rem;
+    }
+
+    .cameraIcon {
+      top: 10rem !important;
     }
   }
 }
@@ -526,6 +539,10 @@ body {
     .profileImg {
       width: 12rem;
       height: 12rem;
+    }
+
+    .cameraIcon {
+      top: 8rem !important;
     }
   }
 }
