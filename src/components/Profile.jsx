@@ -44,7 +44,7 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="bio mt-36">
+        <div className="bio mt-28 md:mt-36">
           <p className="text-center my-5 text-4xl font-bold">
             {username === "loginAc" ? "mohitanand123" : username}
           </p>
