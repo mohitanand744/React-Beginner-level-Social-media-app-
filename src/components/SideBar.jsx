@@ -7,13 +7,11 @@ const SideBar = () => {
 
   const { profileImage, username } = loginAccount[0];
 
-  console.log(loginAccount);
-
   return (
     <>
       <div className={`fadedEffect  ${togglesetting ? "container" : ""}`}>
         <div
-          className={`sidebar_container md:border-4 md:border-[#84d6ff] border-l-0 fixed left-0 top-36 ${
+          className={`sidebar_container md:border-4 md:border-[#84d6ff] border-l-0 fixed left-0 top-36 z-50 ${
             togglesetting ? "toggleSideBar" : ""
           }`}
         >

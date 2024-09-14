@@ -8,12 +8,9 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 
-const Post = ({ userPost, key, username, caption }) => {
+const Post = ({ userPost, username, caption }) => {
   return (
-    <div
-      key={key}
-      className="post overflow-hidden bg-white w-full md:w-[60rem] lg:w-[48rem] xl:w-[60rem] mx-auto"
-    >
+    <div className="post overflow-hidden bg-white w-full md:w-full lg:w-[48rem] xl:w-[60rem] mx-auto">
       <div className="top p-4 w-full flex justify-between ">
         <div className="flex items-center gap-3">
           <Link to={`/profile/${username}`}>

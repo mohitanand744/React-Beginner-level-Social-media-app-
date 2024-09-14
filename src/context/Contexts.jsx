@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { createContext } from "react";
 import users from "../Data/UsersData.json";
 import usersPosts from "../Data/UsersPosts.json";
@@ -12,10 +12,11 @@ const INITIAL_STATE = {
   error: false,
 };
 
-export const ManageState = createContext();
+export const ManageState = createContext(INITIAL_STATE);
 
 function WarpingComponent({ children }) {
   const [togglesetting, setToggleSetting] = useState(false);
+  const [state, dispatch] = useReducer(ManageState, INITIAL_STATE);
 
   const { pathname } = useLocation();
   useEffect(() => {
@@ -31,9 +32,10 @@ function WarpingComponent({ children }) {
       value={{
         toggleFun: toggleSetting,
         togglesetting,
-        users,
-        usersPosts,
-        loginAccount,
+        users: state.users,
+        usersPosts: state.usersPosts,
+        loginAccount: state.loginAccount,
+        dispatch,
       }}
     >
       {children}

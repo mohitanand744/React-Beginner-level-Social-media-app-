@@ -22,7 +22,7 @@ export default function Header() {
           <IoIosNotifications className="notification" />
         </div>
 
-        <div className="profile_Details xl:hidden">
+        <div className="profile_Details 2xl:hidden">
           <img
             onClick={toggleFun}
             className="w-[7rem] active:scale-[0.89] transition-all duration-300 ease-in-out"

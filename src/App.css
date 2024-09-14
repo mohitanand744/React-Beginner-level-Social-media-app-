@@ -442,7 +442,7 @@ body {
 
 /***** Responsiveness Section *****/
 
-@media screen and (width < 1280px) {
+@media screen and (width < 1380px) {
   html {
     font-size: 55%;
   }
@@ -487,15 +487,30 @@ body {
   .toggleSideBar {
     left: 0%;
   }
+  .hero_Container {
+    .post-status {
+      width: 70%;
+    }
+  }
+}
 
+@media screen and (width < 992px) {
   .rightSidebar_container {
-    display: none;
+    min-width: 27rem !important;
+
+    .follow {
+      display: none;
+    }
   }
 }
 
 @media screen and (width < 848px) {
   html {
     font-size: 50%;
+  }
+
+  .rightSidebar_container {
+    min-width: 25rem !important;
   }
 
   .header_Container {
@@ -506,8 +521,18 @@ body {
 @media screen and (width < 738px) {
   .status_container {
     margin: 0;
-    margin-top: 8.6rem;
+    margin-top: 8.2rem;
     padding-bottom: 8rem;
+  }
+
+  .rightSidebar_container {
+    display: none;
+  }
+
+  .hero_Container {
+    .post-status {
+      width: 100%;
+    }
   }
 }
 

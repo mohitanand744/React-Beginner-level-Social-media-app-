@@ -24,7 +24,7 @@ const Profile = () => {
         <div className="profileCoverImg relative flex justify-center w-full">
           <img
             className="w-full h-full mt-32 lg:object-cover object-contain"
-            src="/loginUserCoverImg.jpeg"
+            src="/loginUserCoverImg.webp"
             alt="Profile Cover"
           />
 
@@ -129,14 +129,12 @@ const Profile = () => {
             <>
               <div className="posts w-full justify-center flex gap-2 flex-wrap mt-5">
                 {loginAccount[0].posts.map((post, i) => (
-                  <>
-                    <img
-                      className="w-60 h-60 md:w-80 md:h-80 object-cover"
-                      key={i}
-                      src={post.imageUrl}
-                      alt=""
-                    />
-                  </>
+                  <img
+                    className="w-60 h-60 md:w-80 md:h-80 object-cover"
+                    key={i}
+                    src={post.imageUrl}
+                    alt=""
+                  />
                 ))}
               </div>
             </>

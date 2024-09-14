@@ -13,6 +13,9 @@ function BottomNav() {
       <div className="option">
         <i className="fa-solid fa-heart"></i>
       </div>{" "}
+      <div className="option">
+        <i className="fa-solid fa-circle-play text-6xl text-[#84d6ff]"></i>
+      </div>
       <Link to={"/profile/loginAc"}>
         <div className="option">
           {" "}

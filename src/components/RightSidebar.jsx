@@ -25,7 +25,7 @@ const RightSidebar = ({ hight, margin, borderRadius }) => {
           </div>
         </Link>
 
-        <div className="font-bold text-blue-700 text-xl cursor-pointer">
+        <div className="font-bold text-blue-700 text-xl cursor-pointer follow">
           Switch
         </div>
       </div>
@@ -57,7 +57,7 @@ const RightSidebar = ({ hight, margin, borderRadius }) => {
                 </div>
               </Link>
 
-              <div className="font-bold text-blue-700 text-xl cursor-pointer">
+              <div className="font-bold text-blue-700 text-xl cursor-pointer follow">
                 Follow
               </div>
             </div>
