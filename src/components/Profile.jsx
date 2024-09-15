@@ -5,12 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faCamera } from "@fortawesome/free-solid-svg-icons";
 import useContextData from "../Custom/Hooks/useContextData";
 import SideBar from "./SideBar";
+import loginAccount from "../Data/LoginAccount.json";
 
 const Profile = () => {
   const { username } = useParams();
   const [activeTab, setActiveTab] = useState("posts");
 
-  const { loginAccount, users } = useContextData();
+  const { users } = useContextData();
 
   const userProfile = users.filter(
     (profileImg) => profileImg.username === username
@@ -61,7 +62,7 @@ const Profile = () => {
         </div>
 
         <div className="bio mt-28 md:mt-36">
-          <p className="text-center my-5 text-4xl font-bold">
+          <p className="text-center mt-5 mb-2 text-4xl font-bold">
             {username === "loginAc" ? "mohitanand123" : username}
           </p>
           <p className="text-center text-3xl mx-auto w-[40rem]">
@@ -74,7 +75,6 @@ const Profile = () => {
             <p> 12 Posts</p>
             <p>1,433 Followers</p>
             <p>326 Following</p>
-            <p>23k Likes</p>
           </div>
         </div>
         <div className="postContainer mt-10 mb-52 w-full">

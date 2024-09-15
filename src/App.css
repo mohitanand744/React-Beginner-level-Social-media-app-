@@ -440,6 +440,21 @@ body {
 
 /***** End bottom nav Section *****/
 
+/***** Login Section *****/
+
+.login {
+  background-image: url("./loginBg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  form {
+    box-shadow: 2px 2px 17px 1px #84d6ff inset;
+  }
+}
+
+/***** End Login Section *****/
+
 /***** Responsiveness Section *****/
 
 @media screen and (width < 1380px) {
@@ -568,6 +583,15 @@ body {
 
     .cameraIcon {
       top: 8rem !important;
+    }
+  }
+
+  .login {
+    form {
+      img {
+        width: 7rem;
+      }
+      width: 38rem !important;
     }
   }
 }

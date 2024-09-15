@@ -2,13 +2,12 @@ import React, { useEffect, useReducer, useState } from "react";
 import { createContext } from "react";
 import users from "../Data/UsersData.json";
 import usersPosts from "../Data/UsersPosts.json";
-import loginAccount from "../Data/LoginAccount.json";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const INITIAL_STATE = {
   users,
   usersPosts,
-  loginAccount,
+  loginAccount: false,
   error: false,
 };
 
@@ -17,6 +16,15 @@ export const ManageState = createContext(INITIAL_STATE);
 function WarpingComponent({ children }) {
   const [togglesetting, setToggleSetting] = useState(false);
   const [state, dispatch] = useReducer(ManageState, INITIAL_STATE);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (state.loginAccount === false) {
+      navigate("/login");
+    } else {
+      navigate("/");
+    }
+  }, [state.loginAccount]);
 
   const { pathname } = useLocation();
   useEffect(() => {

@@ -1,4 +1,5 @@
 import "./App.css";
+import "./CSS/Fonts.css";
 import NavFooter from "./components/NavFooter";
 import PostList from "./components/PostList";
 import RightSidebar from "./components/RightSidebar";

@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useContextData from "../Custom/Hooks/useContextData";
+import loginAccount from "../Data/LoginAccount.json";
 
 const SideBar = () => {
-  const { loginAccount, togglesetting } = useContextData();
+  const { togglesetting } = useContextData();
 
   const { profileImage, username } = loginAccount[0];
 

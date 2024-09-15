@@ -1,9 +1,10 @@
 import React from "react";
 import useContextData from "../Custom/Hooks/useContextData";
 import { Link } from "react-router-dom";
+import loginAccount from "../Data/LoginAccount.json";
 
 const RightSidebar = ({ hight, margin, borderRadius }) => {
-  const { users, loginAccount } = useContextData();
+  const { users } = useContextData();
 
   const { profileImage, username } = loginAccount[0];
 
