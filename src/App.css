@@ -443,7 +443,7 @@ body {
 /***** Login Section *****/
 
 .login {
-  background-image: url("./loginBg.jpg");
+  background-image: url("/loginBg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
