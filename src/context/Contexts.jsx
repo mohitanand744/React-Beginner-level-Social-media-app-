@@ -3,26 +3,26 @@ import { createContext } from "react";
 import users from "../Data/UsersData.json";
 import usersPosts from "../Data/UsersPosts.json";
 import { useLocation, useNavigate } from "react-router-dom";
+import { ReducerFun } from "./Reducer";
 
 const INITIAL_STATE = {
   users,
   usersPosts,
-  loginAccount: false,
+  loginAccount: JSON.parse(localStorage.getItem("loginAccount")) || false, // Get from localStorage
+  loginUser: JSON.parse(localStorage.getItem("newUser")) || [],
   error: false,
 };
 
 export const ManageState = createContext(INITIAL_STATE);
 
 function WarpingComponent({ children }) {
+  const [state, dispatch] = useReducer(ReducerFun, INITIAL_STATE);
   const [togglesetting, setToggleSetting] = useState(false);
-  const [state, dispatch] = useReducer(ManageState, INITIAL_STATE);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (state.loginAccount === false) {
       navigate("/login");
-    } else {
-      navigate("/");
     }
   }, [state.loginAccount]);
 
@@ -38,11 +38,12 @@ function WarpingComponent({ children }) {
   return (
     <ManageState.Provider
       value={{
-        toggleFun: toggleSetting,
         togglesetting,
         users: state.users,
         usersPosts: state.usersPosts,
         loginAccount: state.loginAccount,
+        loginUser: state.loginUser,
+        error: state.error,
         dispatch,
       }}
     >

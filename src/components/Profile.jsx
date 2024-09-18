@@ -29,7 +29,7 @@ const Profile = () => {
             alt="Profile Cover"
           />
 
-          {username === "loginAc" ? (
+          {username === "mohitanand123" ? (
             <FontAwesomeIcon
               icon={faPencil}
               className="absolute text-white bottom-10 right-10 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-500"
@@ -43,14 +43,14 @@ const Profile = () => {
             <img
               className="w-full h-full object-cover rounded-full border-[4px] border-white"
               src={
-                username === "loginAc"
+                username === "mohitanand123"
                   ? "/loginUserProfile.jpeg"
                   : userProfile[0].profileImage
               }
               alt=""
             />
 
-            {username === "loginAc" ? (
+            {username === "mohitanand123" ? (
               <FontAwesomeIcon
                 icon={faCamera}
                 className="text-2xl cameraIcon border-white border-2 text-white absolute top-48 right-7 bg-[#052130] p-3 rounded-full active:scale-[0.88] transition-all duration-500 "
@@ -62,9 +62,7 @@ const Profile = () => {
         </div>
 
         <div className="bio mt-28 md:mt-36">
-          <p className="text-center mt-5 mb-2 text-4xl font-bold">
-            {username === "loginAc" ? "mohitanand123" : username}
-          </p>
+          <p className="text-center mt-5 mb-2 text-4xl font-bold">{username}</p>
           <p className="text-center text-3xl mx-auto w-[40rem]">
             Frontend Developer @WeboConnect | Team Work Makes The Dream Work .
           </p>

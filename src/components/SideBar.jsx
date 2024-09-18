@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useContextData from "../Custom/Hooks/useContextData";
 import loginAccount from "../Data/LoginAccount.json";
 
 const SideBar = () => {
-  const { togglesetting } = useContextData();
+  const { togglesetting, dispatch } = useContextData();
+  const navigate = useNavigate();
 
   const { profileImage, username } = loginAccount[0];
 
@@ -16,7 +17,7 @@ const SideBar = () => {
             togglesetting ? "toggleSideBar" : ""
           }`}
         >
-          <Link to={"/profile/loginAc"}>
+          <Link to={"/profile/mohitanand123"}>
             <div className="profile_container">
               <div className="profile_image_container">
                 <img src={profileImage} alt="" />
@@ -49,7 +50,14 @@ const SideBar = () => {
               <i className="fa-solid fa-gear"></i>
               <p>Account Setting</p>
             </div>
-            <div className="options cursor-pointer">
+            <div
+              onClick={() => {
+                dispatch({ type: "LOG_OUT" });
+                navigate("/login");
+                return;
+              }}
+              className="options cursor-pointer"
+            >
               <i className="fa-solid fa-right-from-bracket logouticon"></i>
               <p className="logout">Log Out</p>
             </div>

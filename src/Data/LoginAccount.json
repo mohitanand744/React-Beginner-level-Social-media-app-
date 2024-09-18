@@ -1,6 +1,8 @@
 [
   {
     "userId": 123,
+    "email": "radom444@gmail.com",
+    "password": "123@Mohit",
     "username": "mohitanand123",
     "profileImage": "/loginUserProfile.jpeg",
     "posts": [

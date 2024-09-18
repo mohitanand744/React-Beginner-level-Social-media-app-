@@ -1,52 +1,83 @@
 import React, { useState } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import useContextData from "../Custom/Hooks/useContextData";
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [password, setPassword] = useState("");
+  const [createCredentials, setCreateCredentials] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
   const [passwordStrength, setPasswordStrength] = useState("");
+  const { dispatch } = useContextData();
 
   const handlePasswordShow = () => {
     setShowPassword(!showPassword);
   };
 
-  // Function to check password strength
-  const handlePasswordChange = (e) => {
-    const value = e.target.value;
-    setPassword(value);
+  // Function to handle input changes and check password strength
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setCreateCredentials({
+      ...createCredentials,
+      [name]: value,
+    });
 
-    // Password strength criteria
-    const hasUpperCase = /[A-Z]/.test(value);
-    const hasLowerCase = /[a-z]/.test(value);
-    const hasNumbers = /\d/.test(value);
-    const hasSpecialChars = /[!@#$%^&*(),.?":{}|<>]/.test(value);
-    const isLongEnough = value.length >= 8;
+    if (name === "password") {
+      // Password strength criteria
+      const hasUpperCase = /[A-Z]/.test(value);
+      const hasLowerCase = /[a-z]/.test(value);
+      const hasNumbers = /\d/.test(value);
+      const hasSpecialChars = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+      const isLongEnough = value.length >= 8;
 
-    // Update password strength
-    if (
-      isLongEnough &&
-      hasUpperCase &&
-      hasLowerCase &&
-      hasNumbers &&
-      hasSpecialChars
-    ) {
-      setPasswordStrength("strong");
-    } else if (isLongEnough && hasUpperCase && hasLowerCase && hasNumbers) {
-      setPasswordStrength("medium");
-    } else {
-      setPasswordStrength("weak");
+      // Update password strength
+      if (
+        isLongEnough &&
+        hasUpperCase &&
+        hasLowerCase &&
+        hasNumbers &&
+        hasSpecialChars
+      ) {
+        setPasswordStrength("strong");
+      } else if (isLongEnough && hasUpperCase && hasLowerCase && hasNumbers) {
+        setPasswordStrength("medium");
+      } else {
+        setPasswordStrength("weak");
+      }
     }
+  };
+
+  // Function to handle form submission
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch({ type: "CREATE_ACCOUNT", payload: [createCredentials] });
+
+    // Clear the form
+    setCreateCredentials({
+      name: "",
+      email: "",
+      password: "",
+    });
+    setPasswordStrength("");
+
+    return;
   };
 
   return (
     <div className="login w-full h-[100vh] bg-[#84d6ff] grid place-content-center">
-      <form className="w-[45rem] md:w-[50rem] text-xl md:text-3xl font-semibold backdrop-blur-xl shadow-[#7b9aff]  shadow-inner relative rounded-3xl p-5 h-[70rem] flex items-center flex-col justify-center">
+      <form
+        onSubmit={handleOnSubmit}
+        className="w-[45rem] md:w-[50rem] text-xl md:text-3xl font-semibold backdrop-blur-xl shadow-[#7b9aff] shadow-inner relative rounded-3xl p-5 h-[70rem] flex items-center flex-col justify-center"
+      >
         <div className="logo top-16 flex flex-col items-center gap-6 absolute">
           <img width={70} src="/socialmediaLogo.png" alt="" />
 
           <h2 className="mb-4 font-sofadi text-center text-3xl md:text-4xl text-white mt-6">
-            Welcome <br /> Create Your MIMO Account🙂
+            Welcome <br /> Create Your MIMO Account 🙂
           </h2>
         </div>
         <div className="form-group w-full mb-4 mt-72">
@@ -58,6 +89,8 @@ const SignUpPage = () => {
             className="form-control rounded-xl w-full text-xl md:text-2xl py-3 px-4"
             id="name"
             name="name"
+            value={createCredentials.name}
+            onChange={handleInputChange}
             placeholder="Enter Name"
             required
           />
@@ -71,6 +104,8 @@ const SignUpPage = () => {
             className="form-control rounded-xl w-full text-xl md:text-2xl py-3 px-4"
             id="email"
             name="email"
+            value={createCredentials.email}
+            onChange={handleInputChange}
             placeholder="Enter email"
             required
           />
@@ -80,13 +115,13 @@ const SignUpPage = () => {
             Create Password
           </label>
           <input
-            type={`${showPassword ? "text" : "password"}`}
+            type={showPassword ? "text" : "password"}
             className="form-control rounded-xl w-full text-xl md:text-2xl py-3 px-4"
             id="password"
             name="password"
+            value={createCredentials.password}
+            onChange={handleInputChange}
             placeholder="Password"
-            value={password}
-            onChange={handlePasswordChange}
             required
           />
           {showPassword ? (
@@ -104,7 +139,7 @@ const SignUpPage = () => {
 
         {/* Password strength indicator */}
         <div className="w-full mb-4 text-white text-2xl">
-          {password && (
+          {createCredentials.password && (
             <p>
               Password strength:{" "}
               <span
@@ -140,20 +175,23 @@ const SignUpPage = () => {
 
         <div className="loginSocial mt-4 flex gap-3">
           <img
-            width="48"
-            height="48"
+            width="35"
+            height="35"
+            className="cursor-pointer"
             src="https://img.icons8.com/color/48/google-logo.png"
             alt="google-logo"
           />
           <img
-            width="48"
-            height="48"
+            width="35"
+            height="35"
+            className="cursor-pointer"
             src="https://img.icons8.com/color/48/facebook-new.png"
             alt="facebook-new"
           />
           <img
-            width="50"
-            height="50"
+            width="35"
+            height="35"
+            className="cursor-pointer"
             src="https://img.icons8.com/fluency/50/instagram-new.png"
             alt="instagram-new"
           />
