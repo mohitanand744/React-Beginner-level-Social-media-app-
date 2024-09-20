@@ -8,19 +8,24 @@ import SideBar from "./SideBar";
 import loginAccount from "../Data/LoginAccount.json";
 
 const Profile = () => {
-  const { username } = useParams();
+  const { usersname } = useParams(); // typo here: it's `username`, fix to match your logic
   const [activeTab, setActiveTab] = useState("posts");
 
-  const { users } = useContextData();
+  const { loginUser, users } = useContextData();
 
-  const userProfile = users.filter(
-    (profileImg) => profileImg.username === username
-  );
+  const usersProfile = users.find((user) => user.username === usersname);
+
+  // Destructure if usersProfile exists, otherwise set default values for guest profile
+  const { userId, username, profileImage, posts } = usersProfile || {
+    userId: null,
+    username: "Guest",
+    profileImage: "/noProfile.png",
+    posts: [],
+  };
 
   return (
     <section className="flex">
       {/* Profile content column */}
-
       <div className="profile w-full bg-white">
         <div className="profileCoverImg relative flex justify-center w-full">
           <img
@@ -29,42 +34,36 @@ const Profile = () => {
             alt="Profile Cover"
           />
 
-          {username === "mohitanand123" ? (
+          {usersname === "mohitanand123" ? (
             <FontAwesomeIcon
               icon={faPencil}
               className="absolute text-white bottom-10 right-10 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-500"
             />
-          ) : (
-            ""
-          )}
+          ) : null}
 
           {/* Centering the profile image */}
           <div className="profileImg bg-[#3cbeff] rounded-full absolute p-2 inset-x-0 mx-auto -bottom-24 md:-bottom-32 w-[150px] h-[150px]">
             <img
               className="w-full h-full object-cover rounded-full border-[4px] border-white"
-              src={
-                username === "mohitanand123"
-                  ? "/loginUserProfile.jpeg"
-                  : userProfile[0].profileImage
-              }
-              alt=""
+              src={profileImage}
+              alt="Profile"
             />
 
-            {username === "mohitanand123" ? (
+            {usersname === "mohitanand123" ? (
               <FontAwesomeIcon
                 icon={faCamera}
                 className="text-2xl cameraIcon border-white border-2 text-white absolute top-48 right-7 bg-[#052130] p-3 rounded-full active:scale-[0.88] transition-all duration-500 "
               />
-            ) : (
-              ""
-            )}
+            ) : null}
           </div>
         </div>
 
         <div className="bio mt-28 md:mt-36">
           <p className="text-center mt-5 mb-2 text-4xl font-bold">{username}</p>
           <p className="text-center text-3xl mx-auto w-[40rem]">
-            Frontend Developer @WeboConnect | Team Work Makes The Dream Work .
+            {usersProfile
+              ? "Frontend Developer @WeboConnect | Team Work Makes The Dream Work."
+              : "Welcome to Guest Profile"}
           </p>
         </div>
 
@@ -75,6 +74,7 @@ const Profile = () => {
             <p>326 Following</p>
           </div>
         </div>
+
         <div className="postContainer mt-10 mb-52 w-full">
           <div className="flex justify-center text-3xl font-semibold">
             <ul className="nav nav-underline flex gap-5">
@@ -126,53 +126,48 @@ const Profile = () => {
           {activeTab === "posts" ? (
             <>
               <div className="posts w-full justify-center flex gap-2 flex-wrap mt-5">
-                {loginAccount[0].posts.map((post, i) => (
-                  <img
-                    className="w-60 h-60 md:w-80 md:h-80 object-cover"
-                    key={i}
-                    src={post.imageUrl}
-                    alt=""
-                  />
-                ))}
+                {posts.length > 0 ? (
+                  posts.map((post, i) => (
+                    <img
+                      className="w-60 h-60 md:w-80 md:h-80 object-cover"
+                      key={i}
+                      src={post.imageUrl}
+                      alt=""
+                    />
+                  ))
+                ) : (
+                  <p className="text-red-600 text-2xl md:text-4xl font-bold">
+                    No posts available!?
+                  </p>
+                )}
               </div>
             </>
-          ) : (
-            ""
-          )}
+          ) : null}
 
           {activeTab === "reels" ? (
-            <>
-              <center>
-                <h1 className="text-red-500 text-3xl mt-5 font-semibold">
-                  Still Working on {activeTab}...
-                </h1>
-              </center>
-            </>
-          ) : (
-            ""
-          )}
+            <center>
+              <h1 className="text-red-500 text-3xl mt-5 font-semibold">
+                Still Working on {activeTab}...
+              </h1>
+            </center>
+          ) : null}
 
           {activeTab === "about" ? (
-            <>
-              <center>
-                <h1 className="text-red-500 text-3xl mt-5 font-semibold">
-                  Still Working on {activeTab}...
-                </h1>
-              </center>
-            </>
-          ) : (
-            ""
-          )}
+            <center>
+              <h1 className="text-red-500 text-3xl mt-5 font-semibold">
+                Still Working on {activeTab}...
+              </h1>
+            </center>
+          ) : null}
         </div>
       </div>
 
       {/* Sidebar column */}
-
       <div className="xl:hidden">
         <SideBar />
       </div>
-      <div className="w-[0rem] xl:w-[42.4rem]">
-        <RightSidebar hight="h-full" borderRadius="rounded-none" />
+      <div className="hidden lg:block lg:w-[42rem] xl:w-[42.4rem]">
+        <RightSidebar height="h-full" borderRadius="rounded-none" />
       </div>
     </section>
   );

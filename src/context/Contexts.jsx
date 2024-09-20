@@ -9,7 +9,13 @@ const INITIAL_STATE = {
   users,
   usersPosts,
   loginAccount: JSON.parse(localStorage.getItem("loginAccount")) || false, // Get from localStorage
-  loginUser: JSON.parse(localStorage.getItem("newUser")) || [],
+  loginUser: [
+    {
+      name: "Guest Account",
+      Email: "No Need",
+      password: "...",
+    },
+  ],
   error: false,
 };
 
@@ -31,7 +37,8 @@ function WarpingComponent({ children }) {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const toggleSetting = () => {
+  const toggleSetting = (e) => {
+    e.stopPropagation();
     setToggleSetting(!togglesetting);
   };
 
@@ -39,6 +46,7 @@ function WarpingComponent({ children }) {
     <ManageState.Provider
       value={{
         togglesetting,
+        toggleFun: toggleSetting,
         users: state.users,
         usersPosts: state.usersPosts,
         loginAccount: state.loginAccount,

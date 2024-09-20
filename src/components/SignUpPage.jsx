@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useContextData from "../Custom/Hooks/useContextData";
 
 const SignUpPage = () => {
@@ -11,7 +11,9 @@ const SignUpPage = () => {
     password: "",
   });
   const [passwordStrength, setPasswordStrength] = useState("");
+  const [usernameError, setUsernameError] = useState(""); // Add state for username validation
   const { dispatch } = useContextData();
+  const navigate = useNavigate();
 
   const handlePasswordShow = () => {
     setShowPassword(!showPassword);
@@ -20,9 +22,21 @@ const SignUpPage = () => {
   // Function to handle input changes and check password strength
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
+    // If the input is for the username
+    if (name === "name") {
+      // Check if the username contains spaces
+      if (/\s/.test(value)) {
+        setUsernameError("Username must not contain spaces.");
+      } else {
+        setUsernameError(""); // Clear error if no spaces are found
+      }
+    }
+
+    // Set the credentials only if no spaces in the username
     setCreateCredentials({
       ...createCredentials,
-      [name]: value,
+      [name]: name === "name" ? value.replace(/\s/g, "") : value, // Remove spaces if any
     });
 
     if (name === "password") {
@@ -42,7 +56,7 @@ const SignUpPage = () => {
         hasSpecialChars
       ) {
         setPasswordStrength("strong");
-      } else if (isLongEnough && hasUpperCase && hasLowerCase && hasNumbers) {
+      } else if (hasUpperCase && hasLowerCase && hasNumbers) {
         setPasswordStrength("medium");
       } else {
         setPasswordStrength("weak");
@@ -54,6 +68,12 @@ const SignUpPage = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
+    // Check if username contains spaces before submitting
+    if (/\s/.test(createCredentials.name)) {
+      setUsernameError("Username must not contain spaces.");
+      return;
+    }
+
     dispatch({ type: "CREATE_ACCOUNT", payload: [createCredentials] });
 
     // Clear the form
@@ -63,6 +83,9 @@ const SignUpPage = () => {
       password: "",
     });
     setPasswordStrength("");
+    setUsernameError(""); // Clear username error
+
+    navigate("/login");
 
     return;
   };
@@ -82,7 +105,7 @@ const SignUpPage = () => {
         </div>
         <div className="form-group w-full mb-4 mt-72">
           <label htmlFor="name" className="mb-2 text-white">
-            Name
+            UserName
           </label>
           <input
             type="text"
@@ -91,9 +114,15 @@ const SignUpPage = () => {
             name="name"
             value={createCredentials.name}
             onChange={handleInputChange}
-            placeholder="Enter Name"
+            placeholder="Enter Username (e.g., mohitanand123)"
             required
+            spellCheck={false}
           />
+          {usernameError && (
+            <p className="text-red-500 text-xl md:text-2xl mt-1">
+              {usernameError}
+            </p>
+          )}
         </div>
         <div className="form-group w-full mb-4">
           <label htmlFor="email" className="mb-2 text-white">
@@ -167,7 +196,7 @@ const SignUpPage = () => {
           Create Account
         </button>
         <p className="text-left w-full mt-3 text-xl font-medium md:text-2xl text-white">
-          If You already have an account?{" "}
+          If you already have an account?{" "}
           <span className="text-blue-600">
             <Link to="/login">Login</Link>
           </span>

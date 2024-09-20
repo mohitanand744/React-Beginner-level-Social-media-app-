@@ -3,14 +3,16 @@ export const ReducerFun = (state, action) => {
     case "LOGIN_SUCCESS":
       const { password, gmail } = action.payload.credentials;
 
-      const userAc = JSON.parse(localStorage.getItem("newUser")) || [];
+      const userAc = JSON.parse(localStorage.getItem("newUser")) || [
+        state.loginUser,
+      ];
+
+      console.log(userAc);
 
       // Find the user with matching email and password
       const loginAccData = userAc.find(
         (user) => user.password === password && user.email === gmail
       );
-
-      console.log(loginAccData);
 
       // Check if user exists
       if (loginAccData) {

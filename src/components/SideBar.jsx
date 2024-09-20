@@ -4,15 +4,17 @@ import useContextData from "../Custom/Hooks/useContextData";
 import loginAccount from "../Data/LoginAccount.json";
 
 const SideBar = () => {
-  const { togglesetting, dispatch } = useContextData();
+  const { togglesetting, toggleFun, dispatch } = useContextData();
   const navigate = useNavigate();
-
-  const { profileImage, username } = loginAccount[0];
 
   return (
     <>
-      <div className={`fadedEffect  ${togglesetting ? "container" : ""}`}>
+      <div
+        onClick={toggleFun}
+        className={`fadedEffect  ${togglesetting ? "container" : ""}`}
+      >
         <div
+          onClick={(e) => e.stopPropagation()}
           className={`sidebar_container md:border-4 md:border-[#84d6ff] border-l-0 fixed left-0 top-36 z-50 ${
             togglesetting ? "toggleSideBar" : ""
           }`}
@@ -20,9 +22,9 @@ const SideBar = () => {
           <Link to={"/profile/mohitanand123"}>
             <div className="profile_container">
               <div className="profile_image_container">
-                <img src={profileImage} alt="" />
+                <img src={"/noProfile.png"} alt="" />
               </div>
-              <p className="userName">{username}</p>
+              <p className="userName">Guest</p>
             </div>
           </Link>
           <div className="Explore_container">

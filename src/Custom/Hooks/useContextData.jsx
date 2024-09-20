@@ -10,6 +10,7 @@ const useContextData = () => {
     loginAccount,
     error,
     loginUser,
+    toggleFun,
   } = useContext(ManageState);
   return {
     togglesetting,
@@ -19,6 +20,7 @@ const useContextData = () => {
     dispatch,
     error,
     loginUser,
+    toggleFun,
   };
 };
 
