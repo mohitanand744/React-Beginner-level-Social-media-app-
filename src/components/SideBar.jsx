@@ -21,7 +21,7 @@ const SideBar = () => {
         >
           <Link to={"/profile/mohitanand123"}>
             <div className="profile_container">
-              <div className="profile_image_container">
+              <div className="profile_image_container border">
                 <img src={"/noProfile.png"} alt="" />
               </div>
               <p className="userName">Guest</p>

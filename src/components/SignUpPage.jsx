@@ -5,10 +5,11 @@ import useContextData from "../Custom/Hooks/useContextData";
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [createCredentials, setCreateCredentials] = useState({
+  const [createdCredentials, setCreatedCredentials] = useState({
     name: "",
     email: "",
     password: "",
+    userId: Date.now() + Math.floor(Math.random() * 10000),
   });
   const [passwordStrength, setPasswordStrength] = useState("");
   const [usernameError, setUsernameError] = useState(""); // Add state for username validation
@@ -34,8 +35,8 @@ const SignUpPage = () => {
     }
 
     // Set the credentials only if no spaces in the username
-    setCreateCredentials({
-      ...createCredentials,
+    setCreatedCredentials({
+      ...createdCredentials,
       [name]: name === "name" ? value.replace(/\s/g, "") : value, // Remove spaces if any
     });
 
@@ -69,15 +70,15 @@ const SignUpPage = () => {
     e.preventDefault();
 
     // Check if username contains spaces before submitting
-    if (/\s/.test(createCredentials.name)) {
+    if (/\s/.test(createdCredentials.name)) {
       setUsernameError("Username must not contain spaces.");
       return;
     }
 
-    dispatch({ type: "CREATE_ACCOUNT", payload: [createCredentials] });
+    dispatch({ type: "CREATE_ACCOUNT", payload: createdCredentials });
 
     // Clear the form
-    setCreateCredentials({
+    setCreatedCredentials({
       name: "",
       email: "",
       password: "",
@@ -112,7 +113,7 @@ const SignUpPage = () => {
             className="form-control rounded-xl w-full text-xl md:text-2xl py-3 px-4"
             id="name"
             name="name"
-            value={createCredentials.name}
+            value={createdCredentials.name}
             onChange={handleInputChange}
             placeholder="Enter Username (e.g., mohitanand123)"
             required
@@ -133,7 +134,7 @@ const SignUpPage = () => {
             className="form-control rounded-xl w-full text-xl md:text-2xl py-3 px-4"
             id="email"
             name="email"
-            value={createCredentials.email}
+            value={createdCredentials.email}
             onChange={handleInputChange}
             placeholder="Enter email"
             required
@@ -148,7 +149,7 @@ const SignUpPage = () => {
             className="form-control rounded-xl w-full text-xl md:text-2xl py-3 px-4"
             id="password"
             name="password"
-            value={createCredentials.password}
+            value={createdCredentials.password}
             onChange={handleInputChange}
             placeholder="Password"
             required
@@ -168,7 +169,7 @@ const SignUpPage = () => {
 
         {/* Password strength indicator */}
         <div className="w-full mb-4 text-white text-2xl">
-          {createCredentials.password && (
+          {createdCredentials.password && (
             <p>
               Password strength:{" "}
               <span

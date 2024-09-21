@@ -25,7 +25,7 @@ const LoginPage = () => {
   const handleData = (e) => {
     e.preventDefault();
 
-    dispatch({ type: "LOGIN_SUCCESS", payload: { credentials } });
+    dispatch({ type: "LOGIN_SUCCESS", payload: credentials });
 
     {
       loginAccount && navigate("/");

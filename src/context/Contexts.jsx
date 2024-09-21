@@ -5,17 +5,20 @@ import usersPosts from "../Data/UsersPosts.json";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ReducerFun } from "./Reducer";
 
+const userAc = JSON.parse(localStorage.getItem("newUser"));
+
+const { name, userId } = userAc;
+
 const INITIAL_STATE = {
   users,
   usersPosts,
   loginAccount: JSON.parse(localStorage.getItem("loginAccount")) || false, // Get from localStorage
-  loginUser: [
-    {
-      name: "Guest Account",
-      Email: "No Need",
-      password: "...",
-    },
-  ],
+  loginUser: {
+    userId: userId || null,
+    username: name || "Guest",
+    profileImage: "/noProfile.png",
+    posts: [],
+  },
   error: false,
 };
 
@@ -44,6 +47,10 @@ function WarpingComponent({ children }) {
     e.stopPropagation();
     setToggleSetting(!togglesetting);
   };
+
+  useEffect(() => {
+    console.log("Updated loginUser:", state.loginUser);
+  }, [state.loginUser]);
 
   return (
     <ManageState.Provider

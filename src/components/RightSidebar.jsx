@@ -12,7 +12,11 @@ const RightSidebar = ({ hight, margin, borderRadius }) => {
       <div className="userProfile cursor-pointer mt-5 flex justify-between items-center">
         <Link to={`/profile/mohitanand123`}>
           <div className="flex items-center gap-3">
-            <img className="w-20 rounded-full" src="/noProfile.png" alt="" />
+            <img
+              className="w-20 rounded-full border"
+              src="/noProfile.png"
+              alt=""
+            />
 
             <div className="txt">
               <div className="userName text-2xl font-bold">Guest</div>

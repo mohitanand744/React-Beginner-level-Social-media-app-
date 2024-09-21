@@ -1,28 +1,28 @@
 export const ReducerFun = (state, action) => {
   switch (action.type) {
     case "LOGIN_SUCCESS":
-      const { password, gmail } = action.payload.credentials;
+      const { password, gmail } = action.payload;
+      console.log(password);
 
-      const userAc = JSON.parse(localStorage.getItem("newUser")) || [
-        state.loginUser,
-      ];
-
-      console.log(userAc);
+      const userAc = JSON.parse(localStorage.getItem("newUser"));
 
       // Find the user with matching email and password
-      const loginAccData = userAc.find(
-        (user) => user.password === password && user.email === gmail
-      );
 
-      // Check if user exists
-      if (loginAccData) {
+      if (userAc.password === password && userAc.email === gmail) {
         // Save the login state to localStorage
         localStorage.setItem("loginAccount", JSON.stringify(true));
+
+        const { name, userId } = userAc;
 
         return {
           ...state,
           loginAccount: true,
-          loginUser: loginAccData,
+          loginUser: {
+            userId: userId,
+            username: name,
+            profileImage: null,
+            posts: [],
+          },
           error: false,
         };
       } else {
@@ -40,10 +40,17 @@ export const ReducerFun = (state, action) => {
       const updatedUsers = action.payload;
 
       localStorage.setItem("newUser", JSON.stringify(updatedUsers));
-      console.log(state.loginUser);
+
+      const { name, userId } = updatedUsers;
+
       return {
         ...state,
-        loginUser: JSON.parse(localStorage.getItem("newUser")),
+        loginUser: {
+          userId: userId,
+          username: name,
+          profileImage: null,
+          posts: [],
+        },
         loginAccount: true,
         error: false,
       };

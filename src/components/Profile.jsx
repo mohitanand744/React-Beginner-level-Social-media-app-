@@ -17,12 +17,13 @@ const Profile = () => {
   const usersProfile = users.find((user) => user.username === usersname);
 
   // Destructure if usersProfile exists, otherwise set default values for guest profile
-  const { userId, username, profileImage, posts } = usersProfile || {
-    userId: null,
-    username: "Guest",
-    profileImage: "/noProfile.png",
-    posts: [],
-  };
+  const { userId, username, profileImage, posts } = usersProfile ||
+    loginUser || {
+      userId: null,
+      username: "Guest",
+      profileImage: "/noProfile.png",
+      posts: [],
+    };
 
   return (
     <section className="flex">
@@ -60,7 +61,9 @@ const Profile = () => {
         </div>
 
         <div className="bio mt-28 md:mt-36">
-          <p className="text-center mt-5 mb-2 text-4xl font-bold">{username}</p>
+          <p className="text-center mt-5 mb-2 text-4xl font-bold">
+            {loginUser.username}
+          </p>
           <p className="text-center text-3xl mx-auto w-[40rem]">
             {usersProfile
               ? "Frontend Developer @WeboConnect | Team Work Makes The Dream Work."
