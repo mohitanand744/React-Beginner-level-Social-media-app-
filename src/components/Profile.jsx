@@ -6,12 +6,13 @@ import { faPencil, faCamera } from "@fortawesome/free-solid-svg-icons";
 import useContextData from "../Custom/Hooks/useContextData";
 import SideBar from "./SideBar";
 import loginAccount from "../Data/LoginAccount.json";
+import ViewPost from "./ViewPost";
 
 const Profile = () => {
   const { usersname } = useParams(); // typo here: it's `username`, fix to match your logic
   const [activeTab, setActiveTab] = useState("posts");
 
-  const { loginUser, users } = useContextData();
+  const { loginUser, users, viewPost, setViewPost } = useContextData();
 
   const usersProfile = users.find((user) => user.username === usersname);
 
@@ -26,7 +27,7 @@ const Profile = () => {
   return (
     <section className="flex">
       {/* Profile content column */}
-      <div className="profile w-full bg-white">
+      <div className="profile relative w-full bg-white">
         <div className="profileCoverImg relative flex justify-center w-full">
           <img
             className="w-full h-full mt-32 lg:object-cover object-contain"
@@ -128,12 +129,14 @@ const Profile = () => {
               <div className="posts w-full justify-center flex gap-2 flex-wrap mt-5">
                 {posts.length > 0 ? (
                   posts.map((post, i) => (
-                    <img
-                      className="w-60 h-60 md:w-80 md:h-80 object-cover"
-                      key={i}
-                      src={post.imageUrl}
-                      alt=""
-                    />
+                    <div key={i}>
+                      <img
+                        className="w-60 h-60 md:w-80 md:h-80 object-cover cursor-pointer"
+                        src={post.imageUrl}
+                        alt=""
+                        onClick={() => setViewPost(post)}
+                      />
+                    </div>
                   ))
                 ) : (
                   <p className="text-red-600 text-2xl md:text-4xl font-bold">
@@ -162,12 +165,14 @@ const Profile = () => {
         </div>
       </div>
 
+      <ViewPost />
+
       {/* Sidebar column */}
       <div className="xl:hidden">
         <SideBar />
       </div>
       <div className="hidden lg:block lg:w-[42rem] xl:w-[42.4rem]">
-        <RightSidebar height="h-full" borderRadius="rounded-none" />
+        <RightSidebar hight="bottom-0" borderRadius="rounded-none" />
       </div>
     </section>
   );

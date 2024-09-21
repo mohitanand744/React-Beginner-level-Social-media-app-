@@ -18,6 +18,51 @@
           }
         ],
         "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ashuPost2.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ashuPost3.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 101,
+        "imageUrl": "/ashuPost4.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "_ashu.x7",
+            "commentText": "Amazing view!",
+            "timestamp": "2024-09-07T12:45:00Z"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
       }
     ]
   },
@@ -50,7 +95,7 @@
     "posts": [
       {
         "postId": 103,
-        "imageUrl": "/post4.png",
+        "imageUrl": "/prachiprofileImg.png",
         "caption": "Nature walk.",
         "likes": 200,
         "comments": [
@@ -72,7 +117,7 @@
     "posts": [
       {
         "postId": 103,
-        "imageUrl": "/post5.png",
+        "imageUrl": "/AkashprofileImg.png",
         "caption": "Nature walk.",
         "likes": 200,
         "comments": [

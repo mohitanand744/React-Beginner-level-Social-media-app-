@@ -3,7 +3,7 @@ import useContextData from "../Custom/Hooks/useContextData";
 import { Link } from "react-router-dom";
 
 const RightSidebar = ({ hight, margin, borderRadius }) => {
-  const { users, loginUser } = useContextData();
+  const { users } = useContextData();
 
   return (
     <div

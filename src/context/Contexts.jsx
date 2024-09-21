@@ -24,6 +24,9 @@ export const ManageState = createContext(INITIAL_STATE);
 function WarpingComponent({ children }) {
   const [state, dispatch] = useReducer(ReducerFun, INITIAL_STATE);
   const [togglesetting, setToggleSetting] = useState(false);
+
+  const [viewPost, setViewPost] = useState(null);
+  const [toggleViewPost, setToggleViewPost] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -53,6 +56,10 @@ function WarpingComponent({ children }) {
         loginUser: state.loginUser,
         error: state.error,
         dispatch,
+        viewPost,
+        setViewPost,
+        toggleViewPost,
+        setToggleViewPost,
       }}
     >
       {children}

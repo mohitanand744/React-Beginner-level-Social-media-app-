@@ -455,6 +455,16 @@ body {
 
 /***** End Login Section *****/
 
+/***** viewPost Section *****/
+
+.viewPost {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 20px -10px,
+    rgba(0, 0, 0, 0.123) 0px 0px 20px -50px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/***** End viewPost Section *****/
+
 /***** Responsiveness Section *****/
 
 @media screen and (width < 1380px) {

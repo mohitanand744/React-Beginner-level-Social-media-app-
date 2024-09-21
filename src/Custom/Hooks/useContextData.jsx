@@ -11,6 +11,8 @@ const useContextData = () => {
     error,
     loginUser,
     toggleFun,
+    viewPost,
+    setViewPost,
   } = useContext(ManageState);
   return {
     togglesetting,
@@ -21,6 +23,8 @@ const useContextData = () => {
     error,
     loginUser,
     toggleFun,
+    viewPost,
+    setViewPost,
   };
 };
 
