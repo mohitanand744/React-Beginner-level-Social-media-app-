@@ -31,6 +31,12 @@ body {
   }
 }
 
+.scrollBar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /***** Header Section *****/
 
 .header_Container {
@@ -368,8 +374,8 @@ body {
   min-height: 100vh;
 
   .profileImg {
-    width: 17rem;
-    height: 17rem;
+    width: 16rem;
+    height: 16rem;
     margin-top: 30rem;
   }
   .postContainer {

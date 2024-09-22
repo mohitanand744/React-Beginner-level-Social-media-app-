@@ -156,12 +156,12 @@ const SignUpPage = () => {
           />
           {showPassword ? (
             <BsEyeSlash
-              className="text-dark position-absolute right-6 top-16 active:scale-[0.80] transition-all duration-300 ease-in-out text-3xl"
+              className="text-dark position-absolute right-6 top-[3.3rem] md:top-16 active:scale-[0.80] transition-all duration-300 ease-in-out text-3xl"
               onClick={handlePasswordShow}
             />
           ) : (
             <BsEye
-              className="text-dark position-absolute right-6 top-16 active:scale-[0.80] transition-all duration-300 ease-in-out text-3xl"
+              className="text-dark position-absolute right-6 top-[3.3rem] md:top-16 active:scale-[0.80] transition-all duration-300 ease-in-out text-3xl"
               onClick={handlePasswordShow}
             />
           )}

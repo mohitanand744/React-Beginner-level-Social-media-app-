@@ -28,9 +28,9 @@ const Profile = () => {
     <section className="flex">
       {/* Profile content column */}
       <div className="profile relative w-full bg-white">
-        <div className="profileCoverImg h-[30rem] relative flex justify-center w-full">
+        <div className="profileCoverImg h-[20rem] md:h-[27rem] relative flex justify-center w-full">
           <img
-            className="w-full h-full mt-32 lg:object-cover object-contain"
+            className="w-full h-full mt-32 object-cover"
             src="/loginBg.jpg"
             alt="Profile Cover"
           />
@@ -43,7 +43,7 @@ const Profile = () => {
           ) : null}
 
           {/* Centering the profile image */}
-          <div className="profileImg bg-[#3cbeff] rounded-full absolute p-2 inset-x-0 mx-auto -bottom-24 md:-bottom-[16rem] w-[150px] h-[150px]">
+          <div className="profileImg bg-[#3cbeff] rounded-full absolute p-2 inset-x-0 mx-auto  -bottom-[14rem] sm:-bottom-[16rem] w-[10rem] h-[10rem]">
             <img
               className="w-full h-full object-cover rounded-full border-[4px] border-white"
               src={profileImage}
@@ -59,7 +59,7 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="bio mt-28 md:mt-[17rem]">
+        <div className="bio mt-60 sm:mt-72">
           <p className="text-center mt-5 mb-2 text-4xl font-bold">{username}</p>
           <p className="text-center text-3xl mx-auto w-[40rem]">
             {usersProfile
@@ -69,7 +69,7 @@ const Profile = () => {
         </div>
 
         <div className="flex flex-col items-center mt-10 overflow-hidden">
-          <div className="followers_following flex gap-10 md:gap-16 text-[1.4rem] sm:text-3xl font-bold text-gray-700 mx-4 border-[2.5px] border-[#3cbeff]  w-fit py-4 px-6 md:px-9 rounded-full bg-white">
+          <div className="followers_following flex gap-10 md:gap-16 text-2xl sm:text-3xl font-bold text-gray-700 mx-4 border-[2.5px] border-[#3cbeff]  w-fit py-4 px-6 md:px-9 rounded-full bg-white">
             <p> 12 Posts</p>
             <p>1,433 Followers</p>
             <p>326 Following</p>
