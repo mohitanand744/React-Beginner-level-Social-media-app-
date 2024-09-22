@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart as faRegularHeart,
@@ -8,8 +8,19 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import useContextData from "../Custom/Hooks/useContextData";
 
-const ViewPost = ({ comments, image }) => {
-  const { viewPost, setViewPost } = useContextData();
+const ViewPost = () => {
+  const { viewPost, setViewPost, users } = useContextData();
+  const [isLiked, setIsLiked] = useState(null);
+
+  let likes = viewPost?.likes;
+
+  if (isLiked) {
+    likes++;
+  } else if (isLiked === false) {
+    likes - 1;
+  }
+
+  const user = users?.find((user) => user.username === viewPost?.username);
 
   return (
     <div
@@ -19,10 +30,10 @@ const ViewPost = ({ comments, image }) => {
     >
       <div
         onClick={() => setViewPost(null)}
-        className="absolute top-28 right-10 cursor-pointer bg-[#A9DEF9] p-2 rounded-full border border-white border-2"
+        className="absolute top-28 right-10 cursor-pointer bg-[#A9DEF9] p-1 rounded-full  border-white border-2"
       >
         <img
-          className="w-[2.5rem] "
+          className="w-[2.3rem] "
           src="https://img.icons8.com/ios-glyphs/30/delete-sign.png"
           alt="close-window"
         />
@@ -43,14 +54,14 @@ const ViewPost = ({ comments, image }) => {
           <div className="top flex justify-between  items-center px-4 py-3">
             <div className="postDetails flex gap-4 items-center">
               <img
-                className="rounded-full object-cover w-[5rem] h-[5rem] "
-                src="/v3_BeastPost6.png"
+                className="rounded-full object-cover w-[5.7rem] h-[5.7rem] "
+                src={user?.profileImage}
                 alt=""
               />
               <div className="txt ">
-                <p className="font-bold text-2xl">V3-Beast-rider123</p>
+                <p className="font-bold text-2xl">{viewPost?.username}</p>
                 <p className="text-xl text-gray-500 font-semibold">
-                  Going for long drive
+                  {viewPost?.caption}
                 </p>
               </div>
             </div>
@@ -66,10 +77,18 @@ const ViewPost = ({ comments, image }) => {
           <div className="bottom px-4 py-4">
             <div className="flex justify-between ">
               <div className="iconsLeft flex gap-3">
-                <FontAwesomeIcon
-                  icon={faRegularHeart}
-                  className="text-4xl cursor-pointer"
-                />
+                {isLiked ? (
+                  <i
+                    onClick={() => setIsLiked(!isLiked)}
+                    className={`fa-solid fa-heart text-5xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
+                  ></i>
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faRegularHeart}
+                    className={`text-5xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
+                    onClick={() => setIsLiked(!isLiked)}
+                  />
+                )}
                 <FontAwesomeIcon
                   icon={faComment}
                   className="text-4xl cursor-pointer"
@@ -87,14 +106,11 @@ const ViewPost = ({ comments, image }) => {
                 />
               </div>
             </div>
-            <p className="text-2xl font-semibold">25,546</p>
+            <p className="text-2xl font-semibold">{likes}</p>
             <div className="mt-2 mb-5">
               <p className="caption font-medium text-2xl">
-                Love with Nature...
+                {viewPost?.caption}...more
               </p>
-              <a href="/" className="text-xl">
-                ...more
-              </a>
             </div>
           </div>
         </div>

@@ -14,6 +14,8 @@ const PostList = () => {
             username={post.username}
             userPost={post.imageUrl}
             caption={post.caption}
+            likes={post.likes}
+            comments={post.comments}
           />
         ))}
 

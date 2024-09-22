@@ -3,7 +3,7 @@ import useContextData from "../Custom/Hooks/useContextData";
 import { Link } from "react-router-dom";
 
 const RightSidebar = ({ hight, margin, borderRadius }) => {
-  const { users } = useContextData();
+  const { users, loginUser } = useContextData();
 
   return (
     <div
@@ -14,14 +14,16 @@ const RightSidebar = ({ hight, margin, borderRadius }) => {
           <div className="flex items-center gap-3">
             <img
               className="w-20 rounded-full border"
-              src="/noProfile.png"
+              src={loginUser?.profileImage}
               alt=""
             />
 
             <div className="txt">
-              <div className="userName text-2xl font-bold">Guest</div>
+              <div className="userName text-2xl font-bold">
+                {loginUser?.username}
+              </div>
               <p className="font-normal text-gray-600  text-lg capitalize">
-                It's a Guest Account
+                Walking on custom captions
               </p>
             </div>
           </div>

@@ -5,14 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faCamera } from "@fortawesome/free-solid-svg-icons";
 import useContextData from "../Custom/Hooks/useContextData";
 import SideBar from "./SideBar";
-import loginAccount from "../Data/LoginAccount.json";
 import ViewPost from "./ViewPost";
 
 const Profile = () => {
   const { usersname } = useParams(); // typo here: it's `username`, fix to match your logic
   const [activeTab, setActiveTab] = useState("posts");
 
-  const { loginUser, users, viewPost, setViewPost } = useContextData();
+  const { loginUser, users, setViewPost } = useContextData();
 
   const usersProfile = users.find((user) => user.username === usersname);
 
@@ -61,13 +60,11 @@ const Profile = () => {
         </div>
 
         <div className="bio mt-28 md:mt-36">
-          <p className="text-center mt-5 mb-2 text-4xl font-bold">
-            {loginUser.username}
-          </p>
+          <p className="text-center mt-5 mb-2 text-4xl font-bold">{username}</p>
           <p className="text-center text-3xl mx-auto w-[40rem]">
             {usersProfile
-              ? "Frontend Developer @WeboConnect | Team Work Makes The Dream Work."
-              : "Welcome to Guest Profile"}
+              ? "Welcome to Your Profile | Working on custom captions."
+              : "Welcome to Your Profile | Working on custom captions"}
           </p>
         </div>
 

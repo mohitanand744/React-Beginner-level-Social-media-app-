@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart as faRegularHeart,
@@ -7,8 +7,22 @@ import {
   faBookmark,
 } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
+import useContextData from "./../Custom/Hooks/useContextData";
 
-const Post = ({ userPost, username, caption }) => {
+const Post = ({ userPost, username, caption, likes, comments }) => {
+  const [isLiked, setIsLiked] = useState(null);
+
+  const { users } = useContextData();
+  const user = users.find((user) => user.username === username);
+
+  console.log(user);
+
+  if (isLiked) {
+    likes++;
+  } else if (isLiked === false) {
+    likes - 1;
+  }
+
   return (
     <div className="post overflow-hidden bg-white w-full md:w-full lg:w-[48rem] xl:w-[60rem] mx-auto">
       <div className="top p-4 w-full flex justify-between ">
@@ -16,7 +30,7 @@ const Post = ({ userPost, username, caption }) => {
           <Link to={`/profile/${username}`}>
             <img
               className="w-20 h-20 object-cover rounded-full"
-              src={userPost}
+              src={user?.profileImage}
               alt="profileImg"
             />
           </Link>
@@ -34,10 +48,19 @@ const Post = ({ userPost, username, caption }) => {
       <div className="bottom p-6">
         <div className="flex justify-between ">
           <div className="iconsLeft flex gap-3">
-            <FontAwesomeIcon
-              icon={faRegularHeart}
-              className="text-5xl cursor-pointer"
-            />
+            {isLiked ? (
+              <i
+                onClick={() => setIsLiked(!isLiked)}
+                className={`fa-solid fa-heart text-5xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
+              ></i>
+            ) : (
+              <FontAwesomeIcon
+                icon={faRegularHeart}
+                className={`text-5xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
+                onClick={() => setIsLiked(!isLiked)}
+              />
+            )}
+
             <FontAwesomeIcon
               icon={faComment}
               className="text-5xl cursor-pointer"
@@ -47,7 +70,7 @@ const Post = ({ userPost, username, caption }) => {
               className="text-5xl cursor-pointer"
             />
 
-            <p className="mt-2 text-2xl font-semibold likes">25,546</p>
+            <p className="mt-2 text-2xl font-semibold likes">{likes}</p>
           </div>
 
           <div className="">

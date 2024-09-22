@@ -6,14 +6,15 @@
     "posts": [
       {
         "postId": 101,
+        "username": "_ashu_x7",
         "imageUrl": "/ashuPost1.png",
         "caption": "Dehradun City in Uttarakhand",
         "likes": 120,
         "comments": [
           {
             "commentId": 1,
-            "username": "_ashu.x7",
-            "commentText": "Amazing view!",
+            "username": "mohitanand123",
+            "commentText": "Amazing Brow.",
             "timestamp": "2024-09-07T12:45:00Z"
           }
         ],
@@ -21,14 +22,15 @@
       },
       {
         "postId": 101,
+        "username": "_ashu_x7",
         "imageUrl": "/ashuPost2.png",
         "caption": "Dehradun City in Uttarakhand",
         "likes": 120,
         "comments": [
           {
             "commentId": 1,
-            "username": "_ashu.x7",
-            "commentText": "Amazing view!",
+            "username": "shubham_x7",
+            "commentText": "Rocking 😎",
             "timestamp": "2024-09-07T12:45:00Z"
           }
         ],
@@ -36,14 +38,15 @@
       },
       {
         "postId": 101,
+        "username": "_ashu_x7",
         "imageUrl": "/ashuPost3.png",
         "caption": "Dehradun City in Uttarakhand",
         "likes": 120,
         "comments": [
           {
             "commentId": 1,
-            "username": "_ashu.x7",
-            "commentText": "Amazing view!",
+            "username": "abhi_x7",
+            "commentText": "Superb broo 😎😎",
             "timestamp": "2024-09-07T12:45:00Z"
           }
         ],
@@ -51,13 +54,14 @@
       },
       {
         "postId": 101,
+        "username": "_ashu_x7",
         "imageUrl": "/ashuPost4.png",
         "caption": "Dehradun City in Uttarakhand",
         "likes": 120,
         "comments": [
           {
             "commentId": 1,
-            "username": "_ashu.x7",
+            "username": "v3_Beast_x7",
             "commentText": "Amazing view!",
             "timestamp": "2024-09-07T12:45:00Z"
           }
@@ -73,8 +77,9 @@
     "posts": [
       {
         "postId": 103,
+        "username": "radhekrishna",
         "imageUrl": "/RadheKrishna.png",
-        "caption": "Nature walk.",
+        "caption": "Bolo Radhe Radhe..",
         "likes": 200,
         "comments": [
           {
@@ -95,8 +100,9 @@
     "posts": [
       {
         "postId": 103,
+        "username": "prachiJha123",
         "imageUrl": "/prachiprofileImg.png",
-        "caption": "Nature walk.",
+        "caption": "weekend party 😎",
         "likes": 200,
         "comments": [
           {
@@ -117,8 +123,9 @@
     "posts": [
       {
         "postId": 103,
+        "username": "akashjha1233",
         "imageUrl": "/AkashprofileImg.png",
-        "caption": "Nature walk.",
+        "caption": "morning selfie 😎",
         "likes": 200,
         "comments": [
           {
@@ -139,9 +146,10 @@
     "posts": [
       {
         "postId": 103,
+        "username": "abhi_x7",
         "imageUrl": "/abhiPost1.png",
-        "caption": "Nature walk.",
-        "likes": 200,
+        "caption": "such a good weather 🙂",
+        "likes": 2600,
         "comments": [
           {
             "commentId": 2,
@@ -161,8 +169,9 @@
     "posts": [
       {
         "postId": 103,
+        "username": "shubham_x7",
         "imageUrl": "/ShubhamPost1.png",
-        "caption": "Nature walk.",
+        "caption": "Brand New Car. Self Gifted 😎",
         "likes": 200,
         "comments": [
           {
@@ -176,8 +185,9 @@
       },
       {
         "postId": 103,
+        "username": "shubham_x7",
         "imageUrl": "/ShubhamPost2.png",
-        "caption": "Nature walk.",
+        "caption": "Attitude always matters 😎",
         "likes": 200,
         "comments": [
           {
@@ -191,8 +201,9 @@
       },
       {
         "postId": 103,
+        "username": "shubham_x7",
         "imageUrl": "/ShubhamPost3.png",
-        "caption": "Nature walk.",
+        "caption": "Attitude always matters 😎",
         "likes": 200,
         "comments": [
           {
@@ -213,8 +224,9 @@
     "posts": [
       {
         "postId": 103,
+        "username": "v3_Beast_x7",
         "imageUrl": "/v3_BeastPost1.png",
-        "caption": "Nature walk.",
+        "caption": "Happy to have 2.5K Family.",
         "likes": 200,
         "comments": [
           {
@@ -228,8 +240,9 @@
       },
       {
         "postId": 103,
+        "username": "v3_Beast_x7",
         "imageUrl": "/v3_BeastPost2.png",
-        "caption": "Nature walk.",
+        "caption": "Ready For Night Ride",
         "likes": 200,
         "comments": [
           {
@@ -243,8 +256,9 @@
       },
       {
         "postId": 103,
+        "username": "v3_Beast_x7",
         "imageUrl": "/v3_BeastPost3.png",
-        "caption": "Nature walk.",
+        "caption": "Yonni Wants to go for ride ..😎",
         "likes": 200,
         "comments": [
           {
@@ -258,8 +272,9 @@
       },
       {
         "postId": 103,
+        "username": "v3_Beast_x7",
         "imageUrl": "/v3_BeastPost4.png",
-        "caption": "Nature walk.",
+        "caption": "Beast is ono Fire 😎",
         "likes": 200,
         "comments": [
           {
@@ -273,8 +288,9 @@
       },
       {
         "postId": 103,
+        "username": "v3_Beast_x7",
         "imageUrl": "/v3_BeastPost5.png",
-        "caption": "Nature walk.",
+        "caption": "Beast With Nature... 💕",
         "likes": 200,
         "comments": [
           {
@@ -295,7 +311,8 @@
     "posts": [
       {
         "postId": 103,
-        "imageUrl": "/post9.png",
+        "username": "v3_Lover321",
+        "imageUrl": "/v3_BeastPost5.png",
         "caption": "Nature walk.",
         "likes": 200,
         "comments": [

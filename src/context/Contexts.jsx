@@ -48,10 +48,6 @@ function WarpingComponent({ children }) {
     setToggleSetting(!togglesetting);
   };
 
-  useEffect(() => {
-    console.log("Updated loginUser:", state.loginUser);
-  }, [state.loginUser]);
-
   return (
     <ManageState.Provider
       value={{

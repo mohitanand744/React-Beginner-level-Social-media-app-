@@ -4,7 +4,7 @@ import useContextData from "../Custom/Hooks/useContextData";
 import loginAccount from "../Data/LoginAccount.json";
 
 const SideBar = () => {
-  const { togglesetting, toggleFun, dispatch } = useContextData();
+  const { togglesetting, toggleFun, dispatch, loginUser } = useContextData();
   const navigate = useNavigate();
 
   return (
@@ -22,9 +22,9 @@ const SideBar = () => {
           <Link to={"/profile/mohitanand123"}>
             <div className="profile_container">
               <div className="profile_image_container border">
-                <img src={"/noProfile.png"} alt="" />
+                <img src={loginUser?.profileImage} alt="" />
               </div>
-              <p className="userName">Guest</p>
+              <p className="userName">{loginUser?.username}</p>
             </div>
           </Link>
           <div className="Explore_container">
