@@ -5,9 +5,13 @@ import usersPosts from "../Data/UsersPosts.json";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ReducerFun } from "./Reducer";
 
-const userAc = JSON.parse(localStorage.getItem("newUser"));
+const userAc = JSON.parse(localStorage.getItem("newUser")) || {
+  userId: null,
+  username: "Guest",
+  posts: [],
+};
 
-const { name, userId } = userAc;
+const { username, userId } = userAc;
 
 const INITIAL_STATE = {
   users,
@@ -15,7 +19,7 @@ const INITIAL_STATE = {
   loginAccount: JSON.parse(localStorage.getItem("loginAccount")) || false, // Get from localStorage
   loginUser: {
     userId: userId || null,
-    username: name || "Guest",
+    username: username || "Guest",
     profileImage: "/noProfile.png",
     posts: [],
   },
@@ -35,6 +39,8 @@ function WarpingComponent({ children }) {
   useEffect(() => {
     if (state.loginAccount === false) {
       navigate("/login");
+    } else {
+      navigate("/");
     }
   }, [state.loginAccount]);
 

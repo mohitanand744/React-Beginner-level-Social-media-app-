@@ -15,8 +15,6 @@ const Post = ({ userPost, username, caption, likes, comments }) => {
   const { users } = useContextData();
   const user = users.find((user) => user.username === username);
 
-  console.log(user);
-
   if (isLiked) {
     likes++;
   } else if (isLiked === false) {

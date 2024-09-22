@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsEyeSlash, BsEye } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import useContextData from "../Custom/Hooks/useContextData";
@@ -26,10 +26,6 @@ const LoginPage = () => {
     e.preventDefault();
 
     dispatch({ type: "LOGIN_SUCCESS", payload: credentials });
-
-    {
-      loginAccount && navigate("/");
-    }
   };
 
   const handlePasswordShow = () => {
@@ -37,11 +33,8 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login w-full h-[100vh] grid place-content-center">
-      <form
-        className="w-[45rem] md:w-[50rem] text-xl md:text-3xl font-semibold backdrop-blur-xl shadow-[#7b9aff]  shadow-inner relative rounded-3xl p-5 h-[68rem] flex items-center flex-col justify-center"
-        onSubmit={handleData}
-      >
+    <div className="login w-full h-[100vh] grid place-content-center z-50">
+      <form className="w-[45rem] md:w-[50rem] text-xl md:text-3xl font-semibold backdrop-blur-xl shadow-[#7b9aff]  shadow-inner relative rounded-3xl p-5 h-[68rem] flex items-center flex-col justify-center">
         <div className="logo top-16 flex flex-col items-center gap-6 absolute">
           <img width={70} src="/socialmediaLogo.png" alt="" />
 
@@ -50,9 +43,8 @@ const LoginPage = () => {
             Please log in to continue...
           </h2>
           {error && (
-            <p className="text-red-600 text-center text-2xl">
-              Sorry You Don't Have Any Account!? <br />
-              Please Create Your Account
+            <p className="text-red-600 text-center text-3xl capitalize">
+              Please check your credentials
             </p>
           )}
         </div>
@@ -88,18 +80,19 @@ const LoginPage = () => {
 
           {showPassword ? (
             <BsEyeSlash
-              className="text-dark position-absolute right-6 top-16 active:scale-[0.80] transition-all duration-300 ease-in-out text-3xl"
+              className="text-dark position-absolute right-6 top-[3.3rem] md:top-16 active:scale-[0.80] transition-all duration-300 ease-in-out text-3xl"
               onClick={handlePasswordShow}
             />
           ) : (
             <BsEye
-              className="text-dark position-absolute right-6 top-16 active:scale-[0.80] transition-all duration-300 ease-in-out text-3xl"
+              className="text-dark position-absolute right-6 top-[3.3rem] md:top-16 active:scale-[0.80] transition-all duration-300 ease-in-out text-3xl"
               onClick={handlePasswordShow}
             />
           )}
         </div>
         <button
           type="submit"
+          onClick={handleData}
           className="btn btn-primary bg-[#1e47ff] rounded-xl border-none outline-none shadow-lg mt-4 w-full text-xl md:text-2xl font-bold py-3"
         >
           Login

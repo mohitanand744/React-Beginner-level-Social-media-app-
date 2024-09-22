@@ -28,10 +28,10 @@ const Profile = () => {
     <section className="flex">
       {/* Profile content column */}
       <div className="profile relative w-full bg-white">
-        <div className="profileCoverImg relative flex justify-center w-full">
+        <div className="profileCoverImg h-[30rem] relative flex justify-center w-full">
           <img
             className="w-full h-full mt-32 lg:object-cover object-contain"
-            src="/loginUserCoverImg.webp"
+            src="/loginBg.jpg"
             alt="Profile Cover"
           />
 
@@ -43,7 +43,7 @@ const Profile = () => {
           ) : null}
 
           {/* Centering the profile image */}
-          <div className="profileImg bg-[#3cbeff] rounded-full absolute p-2 inset-x-0 mx-auto -bottom-24 md:-bottom-32 w-[150px] h-[150px]">
+          <div className="profileImg bg-[#3cbeff] rounded-full absolute p-2 inset-x-0 mx-auto -bottom-24 md:-bottom-[16rem] w-[150px] h-[150px]">
             <img
               className="w-full h-full object-cover rounded-full border-[4px] border-white"
               src={profileImage}
@@ -59,7 +59,7 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="bio mt-28 md:mt-36">
+        <div className="bio mt-28 md:mt-[17rem]">
           <p className="text-center mt-5 mb-2 text-4xl font-bold">{username}</p>
           <p className="text-center text-3xl mx-auto w-[40rem]">
             {usersProfile
