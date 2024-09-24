@@ -7,8 +7,6 @@ const SideBar = () => {
   const { togglesetting, toggleFun, dispatch, loginUser } = useContextData();
   const navigate = useNavigate();
 
-  console.log(loginUser.profileImage);
-
   return (
     <>
       <div

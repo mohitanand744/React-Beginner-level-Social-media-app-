@@ -13,7 +13,7 @@ const SignUpPage = () => {
   });
   const [passwordStrength, setPasswordStrength] = useState("");
   const [usernameError, setUsernameError] = useState(""); // Add state for username validation
-  const { dispatch } = useContextData();
+  const { dispatch, signupError, signupSuccess } = useContextData();
   const navigate = useNavigate();
 
   const handlePasswordShow = () => {
@@ -83,10 +83,9 @@ const SignUpPage = () => {
       email: "",
       password: "",
     });
+
     setPasswordStrength("");
     setUsernameError(""); // Clear username error
-
-    navigate("/login");
 
     return;
   };
@@ -100,11 +99,23 @@ const SignUpPage = () => {
         <div className="logo top-16 flex flex-col items-center gap-6 absolute">
           <img width={70} src="/socialmediaLogo.png" alt="" />
 
-          <h2 className="mb-4 font-sofadi text-center text-3xl md:text-4xl text-white mt-6">
+          <h2 className="font-sofadi text-center text-3xl md:text-4xl text-white mt-1">
             Welcome <br /> Create Your MIMO Account 🙂
           </h2>
+
+          {signupError && (
+            <p className="text-red-600 text-center text-2xl capitalize">
+              User with this email already exists!
+            </p>
+          )}
+
+          {signupSuccess && (
+            <p className="text-green-600 text-center text-2xl capitalize">
+              Successfully created your MIMO Account
+            </p>
+          )}
         </div>
-        <div className="form-group w-full mb-4 mt-72">
+        <div className="form-group w-full mb-4 mt-80">
           <label htmlFor="name" className="mb-2 text-white">
             UserName
           </label>
@@ -203,7 +214,7 @@ const SignUpPage = () => {
           </span>
         </p>
 
-        <div className="loginSocial mt-4 flex gap-3">
+        <div className="loginSocial mt-16 flex gap-3">
           <img
             width="35"
             height="35"

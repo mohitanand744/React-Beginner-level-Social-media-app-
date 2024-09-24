@@ -604,8 +604,10 @@ body {
 
   .login {
     form {
-      img {
-        width: 7rem;
+      .logo {
+        img {
+          width: 6rem;
+        }
       }
       width: 38rem !important;
     }

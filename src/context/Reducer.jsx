@@ -2,13 +2,18 @@ export const ReducerFun = (state, action) => {
   switch (action.type) {
     case "LOGIN_SUCCESS": {
       const { password, gmail } = action.payload;
-      const userAc = JSON.parse(localStorage.getItem("newUser"));
 
-      if (userAc && userAc.password === password && userAc.email === gmail) {
-        // Save the login state to localStorage
+      const createdUsers =
+        JSON.parse(localStorage.getItem("createdUsers")) || [];
+
+      const userData = createdUsers.find(
+        (user) => user.email === gmail && user.password === password
+      );
+
+      if (userData) {
         localStorage.setItem("loginAccount", JSON.stringify(true));
 
-        const { name, userId } = userAc;
+        const { name, userId } = userData;
 
         return {
           ...state,
@@ -19,74 +24,65 @@ export const ReducerFun = (state, action) => {
             profileImage: "/noProfile.png",
             posts: [],
           },
-          error: false,
+          loginError: "",
         };
       } else {
-        const createdUsers =
-          JSON.parse(localStorage.getItem("createdUsers")) || [];
-
-        const userData = createdUsers.find(
-          (user) => user.email === gmail && user.password === password
-        );
-
-        if (userData) {
-          localStorage.setItem("loginAccount", JSON.stringify(true));
-          const { name, userId } = userData;
-
-          return {
-            ...state,
-            loginAccount: true,
-            loginUser: {
-              userId: userId,
-              username: name,
-              profileImage: "/noProfile.png",
-              posts: [],
-            },
-            error: false,
-          };
-        } else {
-          localStorage.setItem("loginAccount", JSON.stringify(false));
-          return {
-            ...state,
-            loginAccount: false,
-            error: true,
-          };
-        }
+        localStorage.setItem("loginAccount", JSON.stringify(false));
+        return {
+          ...state,
+          loginAccount: false,
+          loginError: "Invalid credentials.",
+        };
       }
     }
 
     case "CREATE_ACCOUNT": {
-      const updatedUsers = action.payload;
+      const updatedUser = action.payload;
 
-      localStorage.setItem("newUser", JSON.stringify(updatedUsers));
+      // Log the user being created for debugging
+      console.log("Creating user:", updatedUser);
 
-      // Fetch created users, append the new one, and store it
-      const existingUsers =
+      // Get createdUsers from localStorage or initialize as an empty array
+      const createdUsers =
         JSON.parse(localStorage.getItem("createdUsers")) || [];
-      const newUsersList = [...existingUsers, updatedUsers];
-      localStorage.setItem("createdUsers", JSON.stringify(newUsersList));
 
-      const { name, userId } = updatedUsers;
+      // Log the existing users for debugging
+      console.log("Existing users:", createdUsers);
 
-      return {
-        ...state,
-        loginUser: {
-          userId: userId,
-          username: name,
-          profileImage: "/noProfile.png",
-          posts: [],
-        },
-        loginAccount: true,
-        error: false,
-      };
+      // Check if the email already exists
+      const emailExists = createdUsers.some(
+        (user) => user.email === updatedUser.email
+      );
+
+      // Log if the email exists
+      console.log("Email exists:", emailExists);
+
+      if (emailExists) {
+        // If email exists, prevent account creation and set signup error
+
+        console.log("Error");
+
+        return {
+          ...state,
+          signupError: true, // Email already exists, set signup error
+          signupSuccess: false, // Clear signup success flag
+        };
+      } else {
+        // If email doesn't exist, create a new user and store in localStorage
+        const newUsers = [...createdUsers, updatedUser];
+
+        // Log the updated users array for debugging
+        console.log("New users list:", newUsers);
+
+        localStorage.setItem("createdUsers", JSON.stringify(newUsers)); // Save updated users to localStorage
+
+        return {
+          ...state,
+          signupError: false, // Clear any signup error
+          signupSuccess: true, // Set signup success flag
+        };
+      }
     }
-
-    case "LOGIN_FAILS":
-      return {
-        ...state,
-        loginAccount: false,
-        error: true,
-      };
 
     case "LOG_OUT":
       localStorage.removeItem("loginAccount");

@@ -5,25 +5,23 @@ import usersPosts from "../Data/UsersPosts.json";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ReducerFun } from "./Reducer";
 
-const userAc = JSON.parse(localStorage.getItem("newUser")) || {
-  userId: null,
-  username: "Guest",
-  posts: [],
-};
+const userData = JSON.parse(localStorage.getItem("createdUsers")) || [];
 
-const { username, userId } = userAc;
+console.log(userData);
 
 const INITIAL_STATE = {
   users,
   usersPosts,
   loginAccount: JSON.parse(localStorage.getItem("loginAccount")) || false, // Get from localStorage
   loginUser: {
-    userId: userId || null,
-    username: username || "Guest",
+    userId: null,
+    username: "Guest",
     profileImage: "/noProfile.png",
     posts: [],
   },
-  error: false,
+  loginError: "",
+  signupError: false,
+  signupSuccess: false,
 };
 
 export const ManageState = createContext(INITIAL_STATE);
@@ -37,12 +35,12 @@ function WarpingComponent({ children }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (state.loginAccount === false) {
-      navigate("/login");
-    } else {
+    if (state.loginAccount) {
       navigate("/");
+    } else {
+      navigate("/login");
     }
-  }, [state.loginAccount]);
+  }, [state.loginAccount, navigate]);
 
   const { pathname } = useLocation();
   useEffect(() => {
@@ -63,7 +61,9 @@ function WarpingComponent({ children }) {
         usersPosts: state.usersPosts,
         loginAccount: state.loginAccount,
         loginUser: state.loginUser,
-        error: state.error,
+        loginError: state.loginError,
+        signupError: state.signupError,
+        signupSuccess: state.signupSuccess,
         dispatch,
         viewPost,
         setViewPost,

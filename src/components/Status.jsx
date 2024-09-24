@@ -1,15 +1,15 @@
 import useContextData from "../Custom/Hooks/useContextData";
 
 const Status = () => {
-  const { users } = useContextData();
+  const { users, loginUser } = useContextData();
 
   return (
     <div className="status_container md:border-4 md:border-[#84d6ff] lg:rounded-3xl w-full xl:w-[80rem]">
       <div className="story my-story  cursor-pointer">
         <div className="story_img">
-          <img src="/noProfile.png" alt="" />
+          <img src={loginUser?.profileImage} alt="" />
         </div>
-        <p className="StatusUserName">Guest</p>
+        <p className="StatusUserName">{loginUser?.username}</p>
       </div>
 
       {users.map((user, i) => {
