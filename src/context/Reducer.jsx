@@ -3,11 +3,6 @@ export const ReducerFun = (state, action) => {
     case "LOGIN_SUCCESS": {
       const { password, gmail } = action.payload;
 
-      localStorage.setItem(
-        "userCredentials",
-        JSON.stringify({ password, gmail })
-      );
-
       const createdUsers =
         JSON.parse(localStorage.getItem("createdUsers")) || [];
 
@@ -17,6 +12,11 @@ export const ReducerFun = (state, action) => {
 
       if (userData) {
         localStorage.setItem("loginAccount", JSON.stringify(true));
+
+        localStorage.setItem(
+          "userCredentials",
+          JSON.stringify({ password, gmail })
+        );
 
         const { name, userId } = userData;
 

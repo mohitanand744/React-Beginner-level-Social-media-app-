@@ -5,12 +5,20 @@ import usersPosts from "../Data/UsersPosts.json";
 import { json, useLocation, useNavigate } from "react-router-dom";
 import { ReducerFun } from "./Reducer";
 
-const userData = JSON.parse(localStorage.getItem("createdUsers")) || [];
-const userCredentials = JSON.parse(localStorage.getItem("userCredentials"));
+const userData = JSON.parse(localStorage.getItem("createdUsers")) || [
+  {
+    userId: null,
+    username: "Guest",
+    profileImage: "/noProfile.png",
+    posts: [],
+  },
+];
+const userCredentials =
+  JSON.parse(localStorage.getItem("userCredentials")) || {};
 
 const user = userData.find((user) => user.email === userCredentials.gmail);
 
-const { name, userId } = user;
+const { name = "guest", userId = null } = user;
 
 const INITIAL_STATE = {
   users,
