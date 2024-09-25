@@ -16,13 +16,7 @@ const Profile = () => {
   const usersProfile = users.find((user) => user.username === usersname);
 
   // Destructure if usersProfile exists, otherwise set default values for guest profile
-  const { userId, username, profileImage, posts } = usersProfile ||
-    loginUser || {
-      userId: null,
-      username: "Guest",
-      profileImage: "/noProfile.png",
-      posts: [],
-    };
+  const { userId, username, profileImage, posts } = usersProfile || loginUser;
 
   return (
     <section className="flex">

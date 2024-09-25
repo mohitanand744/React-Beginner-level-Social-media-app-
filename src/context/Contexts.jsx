@@ -2,20 +2,23 @@ import React, { useEffect, useReducer, useState } from "react";
 import { createContext } from "react";
 import users from "../Data/UsersData.json";
 import usersPosts from "../Data/UsersPosts.json";
-import { useLocation, useNavigate } from "react-router-dom";
+import { json, useLocation, useNavigate } from "react-router-dom";
 import { ReducerFun } from "./Reducer";
 
 const userData = JSON.parse(localStorage.getItem("createdUsers")) || [];
+const userCredentials = JSON.parse(localStorage.getItem("userCredentials"));
 
-console.log(userData);
+const user = userData.find((user) => user.email === userCredentials.gmail);
+
+const { name, userId } = user;
 
 const INITIAL_STATE = {
   users,
   usersPosts,
   loginAccount: JSON.parse(localStorage.getItem("loginAccount")) || false, // Get from localStorage
   loginUser: {
-    userId: null,
-    username: "Guest",
+    userId: userId || null,
+    username: name || "Guest",
     profileImage: "/noProfile.png",
     posts: [],
   },

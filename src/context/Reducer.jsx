@@ -3,6 +3,11 @@ export const ReducerFun = (state, action) => {
     case "LOGIN_SUCCESS": {
       const { password, gmail } = action.payload;
 
+      localStorage.setItem(
+        "userCredentials",
+        JSON.stringify({ password, gmail })
+      );
+
       const createdUsers =
         JSON.parse(localStorage.getItem("createdUsers")) || [];
 
@@ -86,7 +91,6 @@ export const ReducerFun = (state, action) => {
 
     case "LOG_OUT":
       localStorage.removeItem("loginAccount");
-      localStorage.removeItem("newUser");
 
       return {
         ...state,
