@@ -98,6 +98,17 @@ export const ReducerFun = (state, action) => {
         loginUser: {},
       };
 
+    case "UPLOAD_PROFILE":
+      return {
+        ...state,
+        loginAccount: true,
+        loginUser: {
+          ...state.loginUser,
+          profileImage: action.payload,
+        },
+        loginError: "",
+      };
+
     default:
       return state;
   }

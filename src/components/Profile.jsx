@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import RightSidebar from "./RightSidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,13 +10,28 @@ import ViewPost from "./ViewPost";
 const Profile = () => {
   const { usersname } = useParams(); // typo here: it's `username`, fix to match your logic
   const [activeTab, setActiveTab] = useState("posts");
-
-  const { loginUser, users, setViewPost } = useContextData();
+  const selectProfileImage = useRef(null);
+  const [profile, setProfile] = useState(null);
+  const { loginUser, users, setViewPost, dispatch } = useContextData();
 
   const usersProfile = users.find((user) => user.username === usersname);
 
   // Destructure if usersProfile exists, otherwise set default values for guest profile
   const { userId, username, profileImage, posts } = usersProfile || loginUser;
+
+  // selectProfileImage
+
+  const selectProfileImageFun = () => {
+    selectProfileImage.current.click();
+  };
+
+  const selectProfileImageOnChange = (e) => {
+    let file = e.target.files[0];
+
+    setProfile(file);
+
+    dispatch({ type: "UPLOAD_PROFILE", payload: URL.createObjectURL(file) });
+  };
 
   return (
     <section className="flex">
@@ -29,12 +44,12 @@ const Profile = () => {
             alt="Profile Cover"
           />
 
-          {usersname === "mohitanand123" ? (
+          {username === loginUser.username && (
             <FontAwesomeIcon
               icon={faPencil}
-              className="absolute text-white bottom-10 right-10 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-500"
+              className="absolute text-white -bottom-20 right-16 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-500"
             />
-          ) : null}
+          )}
 
           {/* Centering the profile image */}
           <div className="profileImg bg-[#3cbeff] rounded-full absolute p-2 inset-x-0 mx-auto  -bottom-[14rem] sm:-bottom-[16rem] w-[10rem] h-[10rem]">
@@ -44,12 +59,21 @@ const Profile = () => {
               alt="Profile"
             />
 
-            {usersname === "mohitanand123" ? (
-              <FontAwesomeIcon
-                icon={faCamera}
-                className="text-2xl cameraIcon border-white border-2 text-white absolute top-48 right-7 bg-[#052130] p-3 rounded-full active:scale-[0.88] transition-all duration-500 "
-              />
-            ) : null}
+            {username === loginUser.username && (
+              <>
+                <FontAwesomeIcon
+                  onClick={selectProfileImageFun}
+                  icon={faCamera}
+                  className=" cursor-pointer text-2xl cameraIcon border-white border-2 text-white absolute top-48 right-7 w-[1.3rem] h-[1.3rem] bg-[#052130] p-3 rounded-full active:scale-[0.88] transition-all duration-500 "
+                />
+                <input
+                  type="file"
+                  ref={selectProfileImage}
+                  onChange={selectProfileImageOnChange}
+                  className="hidden"
+                />
+              </>
+            )}
           </div>
         </div>
 

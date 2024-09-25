@@ -13,7 +13,7 @@ const RightSidebar = ({ hight, margin, borderRadius }) => {
         <Link to={`/profile/mohitanand123`}>
           <div className="flex items-center gap-3">
             <img
-              className="w-20 rounded-full border"
+              className="w-20 h-20 object-cover rounded-full border"
               src={loginUser?.profileImage}
               alt=""
             />
