@@ -108,7 +108,22 @@ export const ReducerFun = (state, action) => {
         loginAccount: true,
         loginUser: {
           ...state.loginUser,
-          profileImage: profile,
+          profileImage: action.payload || "/noProfile.png",
+        },
+        loginError: "",
+      };
+
+    case "UPLOAD_PROFILE_COVER":
+      const profileCover = action.payload;
+
+      localStorage.setItem("profileCover", JSON.stringify(profileCover));
+
+      return {
+        ...state,
+        loginAccount: true,
+        loginUser: {
+          ...state.loginUser,
+          profileCover: action.payload || "/defaultCover.png",
         },
         loginError: "",
       };

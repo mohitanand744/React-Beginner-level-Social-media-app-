@@ -20,6 +20,9 @@ const user = userData.find((user) => user.email === userCredentials.gmail);
 
 const { name = "guest", userId = null } = user;
 
+const loginUserProfile =
+  JSON.parse(localStorage.getItem("profile")) || "/noProfile.png";
+
 const INITIAL_STATE = {
   users,
   usersPosts,
@@ -27,8 +30,10 @@ const INITIAL_STATE = {
   loginUser: {
     userId: userId || null,
     username: name || "Guest",
-    profileImage:
-      JSON.parse(localStorage.getItem("profile")) || "/noProfile.png",
+    profileImage: loginUserProfile,
+    profileCover:
+      JSON.parse(localStorage.getItem("profileCover")) || "/defaultCover.png",
+    profileBio: "Here You Can Write Some Short Intro About You.",
     posts: [],
   },
   loginError: "",
@@ -45,16 +50,16 @@ function WarpingComponent({ children }) {
   const [viewPost, setViewPost] = useState(null);
   const [toggleViewPost, setToggleViewPost] = useState(false);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (state.loginAccount) {
-      navigate("/");
+      navigate(pathname);
     } else {
       navigate("/login");
     }
-  }, [state.loginAccount, navigate]);
+  }, [state.loginAccount]);
 
-  const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);

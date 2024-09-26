@@ -11,6 +11,7 @@ const Profile = () => {
   const { usersname } = useParams(); // typo here: it's `username`, fix to match your logic
   const [activeTab, setActiveTab] = useState("posts");
   const selectProfileImage = useRef(null);
+  const selectProfileCoverImg = useRef(null);
   const [profile, setProfile] = useState(null);
   const { loginUser, users, setViewPost, dispatch } = useContextData();
 
@@ -25,32 +26,66 @@ const Profile = () => {
     selectProfileImage.current.click();
   };
 
+  const selectProfileCoverImageFun = () => {
+    selectProfileCoverImg.current.click();
+  };
+
+  const selectProfileCoverImageOnChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        const base64Img = reader.result;
+
+        dispatch({ type: "UPLOAD_PROFILE_COVER", payload: base64Img });
+      };
+    }
+  };
+
   const selectProfileImageOnChange = (e) => {
     let file = e.target.files[0]; // it's returning a Blob data
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file); // Convert file to base64 string
+      reader.onloadend = () => {
+        const base64Img = reader.result;
 
-    setProfile(file);
+        dispatch({ type: "UPLOAD_PROFILE", payload: base64Img });
+      };
 
-    // URL.createObjectURL(file)  this will convert the blob data into a Blob URL.
-
-    dispatch({ type: "UPLOAD_PROFILE", payload: URL.createObjectURL(file) });
+      // URL.createObjectURL(file)  this will convert the blob data into a Blob URL.
+    }
   };
 
   return (
     <section className="flex">
       {/* Profile content column */}
       <div className="profile relative w-full bg-white">
-        <div className="profileCoverImg h-[20rem] md:h-[27rem] relative flex justify-center w-full">
+        <div className="profileCoverImg  h-[20rem] md:h-[27rem] relative flex justify-center w-full">
           <img
-            className="w-full h-full mt-32 object-cover"
-            src="/loginBg.jpg"
+            className="w-full h-full mt-32 object-cover shadow-sm"
+            src={loginUser?.profileCover}
             alt="Profile Cover"
           />
 
           {username === loginUser.username && (
-            <FontAwesomeIcon
-              icon={faPencil}
-              className="absolute text-white -bottom-20 right-16 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-500"
-            />
+            <>
+              <FontAwesomeIcon
+                icon={faPencil}
+                onClick={selectProfileCoverImageFun}
+                className="absolute text-white -bottom-20 right-16 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-500"
+              />
+
+              <input
+                type="file"
+                ref={selectProfileCoverImg}
+                onChange={selectProfileCoverImageOnChange}
+                className="hidden"
+              />
+            </>
           )}
 
           {/* Centering the profile image */}
