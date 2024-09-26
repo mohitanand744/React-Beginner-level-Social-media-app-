@@ -27,7 +27,8 @@ const INITIAL_STATE = {
   loginUser: {
     userId: userId || null,
     username: name || "Guest",
-    profileImage: "/noProfile.png",
+    profileImage:
+      JSON.parse(localStorage.getItem("profile")) || "/noProfile.png",
     posts: [],
   },
   loginError: "",

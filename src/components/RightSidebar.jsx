@@ -10,7 +10,7 @@ const RightSidebar = ({ hight, margin, borderRadius }) => {
       className={`rightSidebar_container border-4 border-[#84d6ff] border-r-0 ${hight} ${borderRadius} ${margin} overflow-x-hidden overflow-y-scroll fixed right-0 top-36`}
     >
       <div className="userProfile cursor-pointer mt-5 flex justify-between items-center">
-        <Link to={`/profile/mohitanand123`}>
+        <Link to={`/profile/${loginUser.username}`}>
           <div className="flex items-center gap-3">
             <img
               className="w-20 h-20 object-cover rounded-full border"

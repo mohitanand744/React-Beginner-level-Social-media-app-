@@ -99,12 +99,16 @@ export const ReducerFun = (state, action) => {
       };
 
     case "UPLOAD_PROFILE":
+      const profile = action.payload;
+
+      localStorage.setItem("profile", JSON.stringify(profile));
+
       return {
         ...state,
         loginAccount: true,
         loginUser: {
           ...state.loginUser,
-          profileImage: action.payload,
+          profileImage: profile,
         },
         loginError: "",
       };
