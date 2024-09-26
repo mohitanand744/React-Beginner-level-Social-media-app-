@@ -415,7 +415,7 @@ body {
     align-items: center;
 
     & i {
-      font-size: 4rem;
+      font-size: 3.8rem;
       color: #54b6e7;
       transition: 0.3s;
       -webkit-transition: 0.3s;
@@ -425,12 +425,6 @@ body {
 
       &:active {
         scale: 0.7;
-      }
-    }
-
-    &:nth-child(3) {
-      & i {
-        color: red;
       }
     }
 
@@ -591,17 +585,6 @@ body {
 @media screen and (width < 450px) {
   .sidebar_container {
     height: 92vh;
-  }
-
-  .profile {
-    .profileImg {
-      width: 12rem;
-      height: 12rem;
-    }
-
-    .cameraIcon {
-      top: 8rem !important;
-    }
   }
 
   .login {

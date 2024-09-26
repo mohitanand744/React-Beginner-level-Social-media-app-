@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useContextData from "../Custom/Hooks/useContextData";
-import loginAccount from "../Data/LoginAccount.json";
 
 const SideBar = () => {
   const { togglesetting, toggleFun, dispatch, loginUser } = useContextData();
@@ -19,14 +18,19 @@ const SideBar = () => {
             togglesetting ? "toggleSideBar" : ""
           }`}
         >
-          <Link to={"/profile/mohitanand123"}>
-            <div className="profile_container">
-              <div className="profile_image_container border">
-                <img src={loginUser?.profileImage} alt="" />
-              </div>
-              <p className="userName">{loginUser?.username}</p>
+          <div className="profile_container">
+            <div className="profile_image_container border">
+              <img
+                onClick={(e) => {
+                  toggleFun(e);
+                  navigate(`/profile/${loginUser?.username}`);
+                }}
+                src={loginUser?.profileImage}
+                alt=""
+              />
             </div>
-          </Link>
+            <p className="userName">{loginUser?.username}</p>
+          </div>
           <div className="Explore_container">
             <h2 className="font-medium">Explore Panel</h2>
             <div className="options cursor-pointer">
