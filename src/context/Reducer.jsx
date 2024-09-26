@@ -128,6 +128,17 @@ export const ReducerFun = (state, action) => {
         loginError: "",
       };
 
+    case "REMOVE_COVER_IMAGE":
+      localStorage.removeItem("profileCover");
+
+      return {
+        ...state,
+        loginUser: {
+          ...state.loginUser,
+          profileCover: "/defaultCover.png",
+        },
+      };
+
     default:
       return state;
   }

@@ -18,7 +18,8 @@ const Profile = () => {
   const usersProfile = users.find((user) => user.username === usersname);
 
   // Destructure if usersProfile exists, otherwise set default values for guest profile
-  const { userId, username, profileImage, posts } = usersProfile || loginUser;
+  const { userId, username, profileImage, posts, profileCover } =
+    usersProfile || loginUser;
 
   // selectProfileImage
 
@@ -32,8 +33,14 @@ const Profile = () => {
 
   const selectProfileCoverImageOnChange = (e) => {
     const file = e.target.files[0];
+    const sizeLimit = 1 * 1024 * 1024;
 
     if (file) {
+      if (file.size > sizeLimit) {
+        alert("File size exceeds 1MB. Please choose a smaller file.");
+        return;
+      }
+
       const reader = new FileReader();
 
       reader.readAsDataURL(file);
@@ -47,7 +54,15 @@ const Profile = () => {
 
   const selectProfileImageOnChange = (e) => {
     let file = e.target.files[0]; // it's returning a Blob data
+
+    const sizeLimit = 1 * 1024 * 1024; // 1MB size limit
+
     if (file) {
+      if (file.size > sizeLimit) {
+        alert("File size exceeds 1MB. Please choose a smaller file.");
+        return;
+      }
+
       const reader = new FileReader();
       reader.readAsDataURL(file); // Convert file to base64 string
       reader.onloadend = () => {
@@ -60,6 +75,10 @@ const Profile = () => {
     }
   };
 
+  const removeCoverImg = () => {
+    dispatch({ type: "REMOVE_COVER_IMAGE" });
+  };
+
   return (
     <section className="flex">
       {/* Profile content column */}
@@ -67,7 +86,7 @@ const Profile = () => {
         <div className="profileCoverImg  h-[20rem] md:h-[27rem] relative flex justify-center w-full">
           <img
             className="w-full h-full mt-32 object-cover shadow-sm"
-            src={loginUser?.profileCover}
+            src={profileCover || "/defaultCover.png"}
             alt="Profile Cover"
           />
 
@@ -78,6 +97,11 @@ const Profile = () => {
                 onClick={selectProfileCoverImageFun}
                 className="absolute text-white -bottom-20 right-16 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-500"
               />
+
+              <i
+                onClick={removeCoverImg}
+                className="fa-solid fa-trash-can absolute text-white -bottom-10 right-16 text-2xl cursor-pointer active:scale-[0.80] transition-all duration-500"
+              ></i>
 
               <input
                 type="file"
