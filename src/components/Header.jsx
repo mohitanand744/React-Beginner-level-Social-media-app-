@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
 import { IoIosNotifications } from "react-icons/io";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { ManageState } from "../context/Contexts";
 import { Link } from "react-router-dom";
+import useContextData from "../Custom/Hooks/useContextData";
 
 export default function Header() {
-  const { toggleFun, togglesetting } = useContext(ManageState);
+  const { userSearchInput, setUserSearchInput, toggleFun, togglesetting } =
+    useContextData();
+
+  const onInputChange = (e) => {
+    setUserSearchInput(e.target.value);
+  };
 
   return (
     <>
@@ -16,7 +20,12 @@ export default function Header() {
           </Link>
         </div>
         <div className="search_container">
-          <input type="text" placeholder="Search for friends..." />
+          <input
+            type="text"
+            value={userSearchInput}
+            onChange={onInputChange}
+            placeholder="Search for friends..."
+          />
         </div>
         <div className="notification">
           <IoIosNotifications className="notification" />

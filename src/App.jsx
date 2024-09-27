@@ -1,8 +1,9 @@
-import "./App.css";
+import "./CSS/App.css";
 import "./CSS/Fonts.css";
 import NavFooter from "./components/NavFooter";
 import PostList from "./components/PostList";
 import RightSidebar from "./components/RightSidebar";
+import SearchUsers from "./components/SearchUsers";
 import SideBar from "./components/SideBar";
 import Status from "./components/Status";
 
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
       <div className="hero_Container">
+        <SearchUsers />
         <SideBar />
         <div className="post-status">
           <Status />

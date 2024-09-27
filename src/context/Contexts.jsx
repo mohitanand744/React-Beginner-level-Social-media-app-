@@ -46,11 +46,11 @@ export const ManageState = createContext(INITIAL_STATE);
 function WarpingComponent({ children }) {
   const [state, dispatch] = useReducer(ReducerFun, INITIAL_STATE);
   const [togglesetting, setToggleSetting] = useState(false);
-
   const [viewPost, setViewPost] = useState(null);
   const [toggleViewPost, setToggleViewPost] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const [userSearchInput, setUserSearchInput] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -78,6 +78,8 @@ function WarpingComponent({ children }) {
         setViewPost,
         toggleViewPost,
         setToggleViewPost,
+        userSearchInput,
+        setUserSearchInput,
       }}
     >
       {children}

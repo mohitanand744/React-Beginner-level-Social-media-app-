@@ -16,6 +16,8 @@ const useContextData = () => {
     loginError,
     signupError,
     signupSuccess,
+    userSearchInput,
+    setUserSearchInput,
   } = useContext(ManageState);
   return {
     togglesetting,
@@ -31,6 +33,8 @@ const useContextData = () => {
     loginError,
     signupError,
     signupSuccess,
+    setUserSearchInput,
+    userSearchInput,
   };
 };
 

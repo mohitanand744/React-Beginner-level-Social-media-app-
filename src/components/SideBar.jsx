@@ -10,11 +10,11 @@ const SideBar = () => {
     <>
       <div
         onClick={toggleFun}
-        className={`fadedEffect  ${togglesetting ? "container" : ""}`}
+        className={`fadedEffect ${togglesetting ? "container" : ""}`}
       >
         <div
           onClick={(e) => e.stopPropagation()}
-          className={`sidebar_container md:border-4 md:border-[#84d6ff] border-l-0 fixed left-0 top-36 z-50 ${
+          className={`sidebar_container md:border-4 md:border-[#84d6ff] border-l-0 fixed left-0 top-36 ${
             togglesetting ? "toggleSideBar" : ""
           }`}
         >
