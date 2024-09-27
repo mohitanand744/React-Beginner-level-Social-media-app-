@@ -26,6 +26,10 @@ const LoginPage = () => {
     e.preventDefault();
 
     dispatch({ type: "LOGIN_SUCCESS", payload: credentials });
+
+    if (loginError === "") {
+      navigate("/");
+    }
   };
 
   const handlePasswordShow = () => {

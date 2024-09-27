@@ -44,8 +44,8 @@ export const ReducerFun = (state, action) => {
     case "CREATE_ACCOUNT": {
       const updatedUser = action.payload;
 
-      // Log the user being created for debugging
-      console.log("Creating user:", updatedUser);
+      localStorage.removeItem("profileCover");
+      localStorage.removeItem("profile");
 
       // Get createdUsers from localStorage or initialize as an empty array
       const createdUsers =
@@ -63,10 +63,6 @@ export const ReducerFun = (state, action) => {
       console.log("Email exists:", emailExists);
 
       if (emailExists) {
-        // If email exists, prevent account creation and set signup error
-
-        console.log("Error");
-
         return {
           ...state,
           signupError: true, // Email already exists, set signup error
@@ -85,6 +81,7 @@ export const ReducerFun = (state, action) => {
           ...state,
           signupError: false, // Clear any signup error
           signupSuccess: true, // Set signup success flag
+          loginError: "",
         };
       }
     }

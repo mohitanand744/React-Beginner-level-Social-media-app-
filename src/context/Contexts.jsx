@@ -53,14 +53,6 @@ function WarpingComponent({ children }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (state.loginAccount) {
-      navigate(pathname);
-    } else {
-      navigate("/login");
-    }
-  }, [state.loginAccount]);
-
-  useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
