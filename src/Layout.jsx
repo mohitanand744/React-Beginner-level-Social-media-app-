@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import Loading from "./components/Loading";
 import useContextData from "./Custom/Hooks/useContextData";
+import SearchUsers from "./components/SearchUsers";
 
 const Layout = () => {
   const [loading, setLoading] = useState(true);
@@ -32,6 +33,7 @@ const Layout = () => {
     <WarpingComponent>
       {/* Conditionally show header and bottom navigation */}
       {!hideNav && <Header />}
+      <SearchUsers />
       <Outlet />
       {!hideNav && <BottomNav />}
     </WarpingComponent>

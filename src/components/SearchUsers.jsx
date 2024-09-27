@@ -3,7 +3,7 @@ import useContextData from "../Custom/Hooks/useContextData";
 import { useNavigate } from "react-router-dom";
 
 const SearchUsers = () => {
-  const { users, userSearchInput } = useContextData();
+  const { users, userSearchInput, setUserSearchInput } = useContextData();
   const navigate = useNavigate();
 
   let user;
@@ -16,6 +16,7 @@ const SearchUsers = () => {
 
   const userProfileVisit = (user) => {
     navigate(`/profile/${user}`);
+    setUserSearchInput("");
   };
 
   return (
