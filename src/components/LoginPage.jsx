@@ -26,11 +26,13 @@ const LoginPage = () => {
     e.preventDefault();
 
     dispatch({ type: "LOGIN_SUCCESS", payload: credentials });
-
-    if (loginError === "") {
-      navigate("/");
-    }
   };
+
+  useEffect(() => {
+    if (loginError === "") {
+      navigate("/"); // Redirect to home if no login error
+    }
+  }, [loginError]);
 
   const handlePasswordShow = () => {
     setShowPassword(!showPassword);
@@ -40,7 +42,7 @@ const LoginPage = () => {
     <div className="login w-full h-[100vh] grid place-content-center z-50">
       <form
         className="w-[45rem] md:w-[50rem] text-xl md:text-3xl font-semibold backdrop-blur-xl shadow-[#7b9aff]  shadow-inner relative rounded-3xl p-5 h-[68rem] flex items-center flex-col justify-center"
-        onSubmit={handleData}
+        onSubmit={handleData} // Correctly handling form submission here
       >
         <div className="logo top-16 flex flex-col items-center gap-6 absolute">
           <img width={70} src="/socialmediaLogo.png" alt="" />
@@ -104,7 +106,7 @@ const LoginPage = () => {
           </p>
         </div>
         <button
-          type="submit"
+          type="submit" // Correctly handle form submit on the button
           className="btn btn-primary bg-[#1e47ff] rounded-xl border-none outline-none shadow-lg mt-4 w-full text-xl md:text-2xl font-bold py-3"
         >
           Login

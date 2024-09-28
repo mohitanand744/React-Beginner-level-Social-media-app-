@@ -340,6 +340,16 @@ body {
 
 /***** End Status Section *****/
 
+/***** post Section *****/
+
+.post:nth-child(1) {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  border-top: 4px solid #a9def9;
+}
+
+/***** End post Section *****/
+
 /***** Right sidebar Section *****/
 
 .rightSidebar_container {

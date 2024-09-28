@@ -88,6 +88,8 @@ export const ReducerFun = (state, action) => {
 
     case "LOG_OUT":
       localStorage.removeItem("loginAccount");
+      localStorage.removeItem("profileCover");
+      localStorage.removeItem("profile");
 
       return {
         ...state,

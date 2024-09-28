@@ -7,20 +7,16 @@ import {
   faBookmark,
 } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
-import useContextData from "./../Custom/Hooks/useContextData";
 
-const Post = ({ userPost, username, caption, likes, comments }) => {
-  const [isLiked, setIsLiked] = useState(null);
-
-  const { users } = useContextData();
-  const user = users.find((user) => user.username === username);
+const Post = ({ userPost, username, caption, likes, profile, comments }) => {
+  /*   const [isLiked, setIsLiked] = useState(null);
 
   if (isLiked) {
     likes++;
   } else if (isLiked === false) {
     likes - 1;
   }
-
+ */
   return (
     <div className="post overflow-hidden bg-white w-full md:w-full lg:w-[48rem] xl:w-[60rem] mx-auto">
       <div className="top p-4 w-full flex justify-between ">
@@ -28,7 +24,7 @@ const Post = ({ userPost, username, caption, likes, comments }) => {
           <Link to={`/profile/${username}`}>
             <img
               className="w-20 h-20 object-cover rounded-full"
-              src={user?.profileImage}
+              src={profile}
               alt="profileImg"
             />
           </Link>
@@ -46,18 +42,14 @@ const Post = ({ userPost, username, caption, likes, comments }) => {
       <div className="bottom p-6">
         <div className="flex justify-between ">
           <div className="iconsLeft flex gap-3">
-            {isLiked ? (
-              <i
-                onClick={() => setIsLiked(!isLiked)}
-                className={`fa-solid fa-heart text-5xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
-              ></i>
-            ) : (
-              <FontAwesomeIcon
-                icon={faRegularHeart}
-                className={`text-5xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
-                onClick={() => setIsLiked(!isLiked)}
-              />
-            )}
+            {/*   <i
+              className={`fa-solid fa-heart text-5xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
+            ></i> */}
+
+            <FontAwesomeIcon
+              icon={faRegularHeart}
+              className={`text-5xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
+            />
 
             <FontAwesomeIcon
               icon={faComment}

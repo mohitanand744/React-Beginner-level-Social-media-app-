@@ -2,7 +2,11 @@
   {
     "userId": 1,
     "username": "_ashu_x7",
+    "email": "ashu@example.com",
+    "password": "password123",
     "profileImage": "/ashuprofileImg2.png",
+    "profileBio": "Explorer of the Himalayas.",
+    "profileCover": "/defaultCover.png",
     "posts": [
       {
         "postId": 101,
@@ -21,7 +25,7 @@
         "timestamp": "2024-09-07T10:30:00Z"
       },
       {
-        "postId": 101,
+        "postId": 102,
         "username": "_ashu_x7",
         "imageUrl": "/ashuPost2.png",
         "caption": "Dehradun City in Uttarakhand",
@@ -35,45 +39,17 @@
           }
         ],
         "timestamp": "2024-09-07T10:30:00Z"
-      },
-      {
-        "postId": 101,
-        "username": "_ashu_x7",
-        "imageUrl": "/ashuPost3.png",
-        "caption": "Dehradun City in Uttarakhand",
-        "likes": 120,
-        "comments": [
-          {
-            "commentId": 1,
-            "username": "abhi_x7",
-            "commentText": "Superb broo 😎😎",
-            "timestamp": "2024-09-07T12:45:00Z"
-          }
-        ],
-        "timestamp": "2024-09-07T10:30:00Z"
-      },
-      {
-        "postId": 101,
-        "username": "_ashu_x7",
-        "imageUrl": "/ashuPost4.png",
-        "caption": "Dehradun City in Uttarakhand",
-        "likes": 120,
-        "comments": [
-          {
-            "commentId": 1,
-            "username": "v3_Beast_x7",
-            "commentText": "Amazing view!",
-            "timestamp": "2024-09-07T12:45:00Z"
-          }
-        ],
-        "timestamp": "2024-09-07T10:30:00Z"
       }
     ]
   },
   {
     "userId": 6,
     "username": "radhekrishna",
+    "email": "radhe@example.com",
+    "password": "radhe123",
     "profileImage": "/RadheKrishna.png",
+    "profileBio": "Spreading positivity with spirituality.",
+    "profileCover": "/defaultCover.png",
     "posts": [
       {
         "postId": 103,
@@ -96,7 +72,11 @@
   {
     "userId": 7,
     "username": "prachiJha123",
+    "email": "prachi@example.com",
+    "password": "prachiPass",
     "profileImage": "/prachiprofileImg.png",
+    "profileBio": "Weekend vibes and good times.",
+    "profileCover": "/defaultCover.png",
     "posts": [
       {
         "postId": 103,
@@ -119,7 +99,11 @@
   {
     "userId": 8,
     "username": "akashjha1233",
+    "email": "akash@example.com",
+    "password": "akashPass",
     "profileImage": "/AkashprofileImg.png",
+    "profileBio": "Morning vibes all the way.",
+    "profileCover": "/defaultCover.png",
     "posts": [
       {
         "postId": 103,
@@ -142,7 +126,11 @@
   {
     "userId": 2,
     "username": "abhi_x7",
+    "email": "abhi@example.com",
+    "password": "abhi123",
     "profileImage": "/abhiPost2.png",
+    "profileBio": "Lover of nature and good weather.",
+    "profileCover": "/defaultCover.png",
     "posts": [
       {
         "postId": 103,
@@ -165,7 +153,11 @@
   {
     "userId": 3,
     "username": "shubham_x7",
+    "email": "shubham@example.com",
+    "password": "shubhamPass",
     "profileImage": "/ShubhamprofileImg.png",
+    "profileBio": "Living life on my own terms.",
+    "profileCover": "/defaultCover.png",
     "posts": [
       {
         "postId": 103,
@@ -182,45 +174,17 @@
           }
         ],
         "timestamp": "2024-09-07T13:00:00Z"
-      },
-      {
-        "postId": 103,
-        "username": "shubham_x7",
-        "imageUrl": "/ShubhamPost2.png",
-        "caption": "Attitude always matters 😎",
-        "likes": 200,
-        "comments": [
-          {
-            "commentId": 2,
-            "username": "john_doe",
-            "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
-          }
-        ],
-        "timestamp": "2024-09-07T13:00:00Z"
-      },
-      {
-        "postId": 103,
-        "username": "shubham_x7",
-        "imageUrl": "/ShubhamPost3.png",
-        "caption": "Attitude always matters 😎",
-        "likes": 200,
-        "comments": [
-          {
-            "commentId": 2,
-            "username": "john_doe",
-            "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
-          }
-        ],
-        "timestamp": "2024-09-07T13:00:00Z"
       }
     ]
   },
   {
     "userId": 4,
     "username": "v3_Beast_x7",
+    "email": "beast@example.com",
+    "password": "beastMode",
     "profileImage": "/v3_BeastProfile.png",
+    "profileBio": "2.5K family and counting! 🚀",
+    "profileCover": "/defaultCover.png",
     "posts": [
       {
         "postId": 103,
@@ -237,77 +201,17 @@
           }
         ],
         "timestamp": "2024-09-07T13:00:00Z"
-      },
-      {
-        "postId": 103,
-        "username": "v3_Beast_x7",
-        "imageUrl": "/v3_BeastPost2.png",
-        "caption": "Ready For Night Ride",
-        "likes": 200,
-        "comments": [
-          {
-            "commentId": 2,
-            "username": "john_doe",
-            "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
-          }
-        ],
-        "timestamp": "2024-09-07T13:00:00Z"
-      },
-      {
-        "postId": 103,
-        "username": "v3_Beast_x7",
-        "imageUrl": "/v3_BeastPost3.png",
-        "caption": "Yonni Wants to go for ride ..😎",
-        "likes": 200,
-        "comments": [
-          {
-            "commentId": 2,
-            "username": "john_doe",
-            "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
-          }
-        ],
-        "timestamp": "2024-09-07T13:00:00Z"
-      },
-      {
-        "postId": 103,
-        "username": "v3_Beast_x7",
-        "imageUrl": "/v3_BeastPost4.png",
-        "caption": "Beast is ono Fire 😎",
-        "likes": 200,
-        "comments": [
-          {
-            "commentId": 2,
-            "username": "john_doe",
-            "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
-          }
-        ],
-        "timestamp": "2024-09-07T13:00:00Z"
-      },
-      {
-        "postId": 103,
-        "username": "v3_Beast_x7",
-        "imageUrl": "/v3_BeastPost5.png",
-        "caption": "Beast With Nature... 💕",
-        "likes": 200,
-        "comments": [
-          {
-            "commentId": 2,
-            "username": "john_doe",
-            "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
-          }
-        ],
-        "timestamp": "2024-09-07T13:00:00Z"
       }
     ]
   },
   {
     "userId": 5,
     "username": "v3_Lover321",
+    "email": "lover@example.com",
+    "password": "loveNature",
     "profileImage": "/v3_BeastPost5.png",
+    "profileBio": "Nature lover and a passionate hiker.",
+    "profileCover": "/defaultCover.png",
     "posts": [
       {
         "postId": 103,

@@ -1,8 +1,7 @@
 import React, { useEffect, useReducer, useState } from "react";
 import { createContext } from "react";
 import users from "../Data/UsersData.json";
-import usersPosts from "../Data/UsersPosts.json";
-import { json, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ReducerFun } from "./Reducer";
 
 const userData = JSON.parse(localStorage.getItem("createdUsers")) || [
@@ -16,7 +15,8 @@ const userData = JSON.parse(localStorage.getItem("createdUsers")) || [
 const userCredentials =
   JSON.parse(localStorage.getItem("userCredentials")) || {};
 
-const user = userData.find((user) => user.email === userCredentials.gmail);
+const user =
+  userData.find((user) => user.email === userCredentials.gmail) || {};
 
 const { name = "guest", userId = null } = user;
 
@@ -25,7 +25,6 @@ const loginUserProfile =
 
 const INITIAL_STATE = {
   users,
-  usersPosts,
   loginAccount: JSON.parse(localStorage.getItem("loginAccount")) || false, // Get from localStorage
   loginUser: {
     userId: userId || null,
@@ -36,7 +35,8 @@ const INITIAL_STATE = {
     profileBio: "Here You Can Write Some Short Intro About You.",
     posts: [],
   },
-  loginError: "",
+  loginUsers: [...users],
+  loginError: null,
   signupError: false,
   signupSuccess: false,
 };
@@ -50,7 +50,7 @@ function WarpingComponent({ children }) {
   const [toggleViewPost, setToggleViewPost] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const [userSearchInput, setUserSearchInput] = useState(null);
+  const [userSearchInput, setUserSearchInput] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
