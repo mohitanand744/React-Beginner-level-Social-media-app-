@@ -571,6 +571,12 @@ body {
     padding-bottom: 8rem;
   }
 
+  .post:nth-child(1) {
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0rem;
+    border-top: 0px solid #a9def9;
+  }
+
   .rightSidebar_container {
     display: none;
   }

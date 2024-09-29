@@ -19,7 +19,8 @@
             "commentId": 1,
             "username": "mohitanand123",
             "commentText": "Amazing Brow.",
-            "timestamp": "2024-09-07T12:45:00Z"
+            "timestamp": "2024-09-06T12:45:00Z",
+            "profileImage": "/loginUserProfile.jpeg"
           }
         ],
         "timestamp": "2024-09-07T10:30:00Z"
@@ -35,7 +36,42 @@
             "commentId": 1,
             "username": "shubham_x7",
             "commentText": "Rocking 😎",
-            "timestamp": "2024-09-07T12:45:00Z"
+            "timestamp": "2024-09-06T14:15:00Z",
+            "profileImage": "/ShubhamprofileImg.png"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 102,
+        "username": "_ashu_x7",
+        "imageUrl": "/ashuPost3.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "shubham_x7",
+            "commentText": "Rocking 😎",
+            "timestamp": "2024-09-06T14:15:00Z",
+            "profileImage": "/ShubhamprofileImg.png"
+          }
+        ],
+        "timestamp": "2024-09-07T10:30:00Z"
+      },
+      {
+        "postId": 102,
+        "username": "_ashu_x7",
+        "imageUrl": "/ashuPost4.png",
+        "caption": "Dehradun City in Uttarakhand",
+        "likes": 120,
+        "comments": [
+          {
+            "commentId": 1,
+            "username": "shubham_x7",
+            "commentText": "Rocking 😎",
+            "timestamp": "2024-09-06T14:15:00Z",
+            "profileImage": "/ShubhamprofileImg.png"
           }
         ],
         "timestamp": "2024-09-07T10:30:00Z"
@@ -60,9 +96,10 @@
         "comments": [
           {
             "commentId": 2,
-            "username": "john_doe",
+            "username": "_ashu_x7",
             "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
+            "timestamp": "2024-09-07T14:00:00Z",
+            "profileImage": "/ashuprofileImg2.png"
           }
         ],
         "timestamp": "2024-09-07T13:00:00Z"
@@ -87,9 +124,10 @@
         "comments": [
           {
             "commentId": 2,
-            "username": "john_doe",
-            "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
+            "username": "akashjha1233",
+            "commentText": "Having fun!",
+            "timestamp": "2024-09-06T16:00:00Z",
+            "profileImage": "/AkashprofileImg.png"
           }
         ],
         "timestamp": "2024-09-07T13:00:00Z"
@@ -114,9 +152,10 @@
         "comments": [
           {
             "commentId": 2,
-            "username": "john_doe",
-            "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
+            "username": "prachiJha123",
+            "commentText": "Such a great morning!",
+            "timestamp": "2024-09-05T08:45:00Z",
+            "profileImage": "/prachiprofileImg.png"
           }
         ],
         "timestamp": "2024-09-07T13:00:00Z"
@@ -141,9 +180,10 @@
         "comments": [
           {
             "commentId": 2,
-            "username": "john_doe",
-            "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
+            "username": "shubham_x7",
+            "commentText": "I love this!",
+            "timestamp": "2024-09-04T14:30:00Z",
+            "profileImage": "/ShubhamprofileImg.png"
           }
         ],
         "timestamp": "2024-09-07T13:00:00Z"
@@ -168,12 +208,47 @@
         "comments": [
           {
             "commentId": 2,
-            "username": "john_doe",
+            "username": "abhi_x7",
             "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
+            "timestamp": "2024-09-07T14:00:00Z",
+            "profileImage": "/abhiPost2.png"
           }
         ],
         "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "username": "shubham_x7",
+        "imageUrl": "/ShubhamPost2.png",
+        "caption": "Enjoying a sunset drive 🚗",
+        "likes": 150,
+        "comments": [
+          {
+            "commentId": 3,
+            "username": "radhekrishna",
+            "commentText": "Perfect way to end the day!",
+            "timestamp": "2024-09-07T17:00:00Z",
+            "profileImage": "/RadheKrishna.png"
+          }
+        ],
+        "timestamp": "2024-09-07T16:30:00Z"
+      },
+      {
+        "postId": 103,
+        "username": "shubham_x7",
+        "imageUrl": "/ShubhamPost3.png",
+        "caption": "Road trip vibes 🛣️",
+        "likes": 180,
+        "comments": [
+          {
+            "commentId": 4,
+            "username": "mohitanand123",
+            "commentText": "SuperB Brooo!",
+            "timestamp": "2024-09-08T10:00:00Z",
+            "profileImage": "/loginUserProfile.jpeg"
+          }
+        ],
+        "timestamp": "2024-09-08T09:45:00Z"
       }
     ]
   },
@@ -196,8 +271,94 @@
           {
             "commentId": 2,
             "username": "john_doe",
-            "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
+            "commentText": "That's awesome!",
+            "timestamp": "2024-09-02T14:00:00Z",
+            "profileImage": "https://img.freepik.com/free-photo/front-view-portrait-businessman-with-glasses_23-2148816831.jpg"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "username": "v3_Beast_x7",
+        "imageUrl": "/v3_BeastPost2.png",
+        "caption": "Happy to have 2.5K Family.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "That's awesome!",
+            "timestamp": "2024-09-02T14:00:00Z",
+            "profileImage": "https://img.freepik.com/free-photo/front-view-portrait-businessman-with-glasses_23-2148816831.jpg"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "username": "v3_Beast_x7",
+        "imageUrl": "/v3_BeastPost3.png",
+        "caption": "Happy to have 2.5K Family.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "That's awesome!",
+            "timestamp": "2024-09-02T14:00:00Z",
+            "profileImage": "https://img.freepik.com/free-photo/front-view-portrait-businessman-with-glasses_23-2148816831.jpg"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "username": "v3_Beast_x7",
+        "imageUrl": "/v3_BeastPost4.png",
+        "caption": "Happy to have 2.5K Family.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "That's awesome!",
+            "timestamp": "2024-09-02T14:00:00Z",
+            "profileImage": "https://img.freepik.com/free-photo/front-view-portrait-businessman-with-glasses_23-2148816831.jpg"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "username": "v3_Beast_x7",
+        "imageUrl": "/v3_BeastPost5.png",
+        "caption": "Happy to have 2.5K Family.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "That's awesome!",
+            "timestamp": "2024-09-02T14:00:00Z",
+            "profileImage": "https://img.freepik.com/free-photo/front-view-portrait-businessman-with-glasses_23-2148816831.jpg"
+          }
+        ],
+        "timestamp": "2024-09-07T13:00:00Z"
+      },
+      {
+        "postId": 103,
+        "username": "v3_Beast_x7",
+        "imageUrl": "/v3_BeastPost6.png",
+        "caption": "Happy to have 2.5K Family.",
+        "likes": 200,
+        "comments": [
+          {
+            "commentId": 2,
+            "username": "john_doe",
+            "commentText": "That's awesome!",
+            "timestamp": "2024-09-02T14:00:00Z",
+            "profileImage": "https://img.freepik.com/free-photo/front-view-portrait-businessman-with-glasses_23-2148816831.jpg"
           }
         ],
         "timestamp": "2024-09-07T13:00:00Z"
@@ -223,8 +384,9 @@
           {
             "commentId": 2,
             "username": "john_doe",
-            "commentText": "Looks peaceful!",
-            "timestamp": "2024-09-07T14:00:00Z"
+            "commentText": "Beautiful!",
+            "timestamp": "2024-09-01T16:45:00Z",
+            "profileImage": "https://img.freepik.com/free-photo/front-view-portrait-businessman-with-glasses_23-2148816831.jpg"
           }
         ],
         "timestamp": "2024-09-07T13:00:00Z"

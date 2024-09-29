@@ -17,7 +17,7 @@ const Layout = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Adjust the loading time as needed
+    }, 2000); // Adjust the loading time as needed
 
     return () => clearTimeout(timer); // Clean up timer on unmount
   }, []);

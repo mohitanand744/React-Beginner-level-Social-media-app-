@@ -3,14 +3,15 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import Profile from "../components/Profile";
 import Layout from "../Layout";
 import App from "../App";
 import LoginPage from "../components/LoginPage";
 import SignUpPage from "../components/SignUpPage";
-import React from "react";
+import React, { Suspense } from "react";
 import ProtectedRoute from "./../Auth/ProtectedRoute";
+const Profile = React.lazy(() => import("../components/Profile"));
 import PublicRoute from "./../Auth/PublicRoute";
+import Loading from "../components/Loading";
 
 const Routes = () => {
   const router = createBrowserRouter(
@@ -31,7 +32,9 @@ const Routes = () => {
           path="profile/:usersname"
           element={
             <ProtectedRoute>
-              <Profile />
+              <Suspense fallback={<Loading />}>
+                <Profile />
+              </Suspense>
             </ProtectedRoute>
           }
         />

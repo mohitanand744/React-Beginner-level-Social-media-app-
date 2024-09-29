@@ -4,18 +4,27 @@ import { Link } from "react-router-dom";
 import useContextData from "../Custom/Hooks/useContextData";
 
 export default function Header() {
-  const { userSearchInput, setUserSearchInput, toggleFun, togglesetting } =
-    useContextData();
+  const {
+    userSearchInput,
+    setUserSearchInput,
+    toggleFun,
+    togglesetting,
+    setViewPost,
+  } = useContextData();
 
   const onInputChange = (e) => {
     setUserSearchInput(e.target.value);
+  };
+
+  const removeViewPost = () => {
+    setViewPost(null);
   };
 
   return (
     <>
       <div className="header_Container fixed top-0 w-full z-50">
         <div className="logo_Container">
-          <Link to={"/"}>
+          <Link to={"/"} onClick={removeViewPost}>
             <img src="/socialmediaLogo.png" alt="" />
           </Link>
         </div>

@@ -21,6 +21,25 @@ const ViewPost = () => {
     likes - 1;
   }
 
+  const formatTimestamp = (timestamp) => {
+    const commentTime = new Date(timestamp);
+    const currentTime = new Date();
+
+    const timeDifference = Math.abs(currentTime - commentTime); // Difference in milliseconds
+
+    const minutes = Math.floor(timeDifference / (1000 * 60));
+    const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+    if (days > 0) {
+      return `${days} day${days !== 1 ? "s" : ""} ago`;
+    } else if (hours > 0) {
+      return `${hours} hour${hours !== 1 ? "s" : ""} ago`;
+    } else {
+      return `${minutes} min${minutes !== 1 ? "s" : ""} ago`;
+    }
+  };
+
   const user = users?.find((user) => user.username === viewPost?.username);
 
   return (
@@ -69,265 +88,53 @@ const ViewPost = () => {
             <div className="text-4xl font-bold pr-7">...</div>
           </div>
           <div className="h-[73%] hidden lg:flex flex-col gap-4 overflow-x-hidden overflow-y-scroll scrollBar  px-4 py-10 text-dark">
-            <div className="comment flex items-center justify-between">
-              <div className="flex gap-3">
-                <div className="proImg">
-                  <img
-                    className=" w-[4rem] h-[4rem] object-cover rounded-full"
-                    src="/v3_BeastPost4.png"
-                    alt=""
-                  />
-                </div>
-                <div className="txt flex flex-col gap-2">
-                  <div className="flex gap-3">
-                    <h3 className="text-2xl fw-semibold ">v3-lover123</h3>
-                    <p className="text-2xl">superb Brow.. 💕💕</p>
+            {viewPost?.comments.map((comment) => (
+              <div
+                key={comment.commentId}
+                className="comment flex items-center justify-between"
+              >
+                <div className="flex gap-3">
+                  <div className="proImg">
+                    <img
+                      className=" w-[4rem] h-[4rem] object-cover rounded-full"
+                      src={comment.profileImage}
+                      alt=""
+                    />
                   </div>
-                  <div className="flex gap-3 text-xl fw-medium text-gray-700">
-                    <p>15min</p> <p className="cursor-pointer">1 like</p>{" "}
-                    <p className="cursor-pointer">Reply</p>
+                  <div className="txt flex flex-col gap-2">
+                    <div className="flex gap-3">
+                      <h3 className="text-2xl fw-semibold ">
+                        {comment.username}
+                      </h3>
+                      <p className="text-2xl">{comment.commentText}</p>
+                    </div>
+                    <div className="flex gap-3 text-xl fw-medium text-gray-700">
+                      <p>{formatTimestamp(comment.timestamp)}</p>{" "}
+                      <p className="cursor-pointer">1 like</p>{" "}
+                      <p className="cursor-pointer">Reply</p>
+                    </div>
+                    <p className="text-xl cursor-pointer">
+                      ____View replies (3)
+                    </p>
                   </div>
-                  <p className="text-xl cursor-pointer">____View replies (3)</p>
                 </div>
-              </div>
 
-              <div className="">
-                {isCommentLiked ? (
-                  <i
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                    className={`fa-solid fa-heart text-2xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
-                  ></i>
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faRegularHeart}
-                    className={`text-2xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                  />
-                )}
-              </div>
-            </div>
-            <div className="comment flex items-center justify-between">
-              <div className="flex gap-3">
-                <div className="proImg">
-                  <img
-                    className=" w-[4rem] h-[4rem] object-cover rounded-full"
-                    src="/v3_BeastPost4.png"
-                    alt=""
-                  />
-                </div>
-                <div className="txt flex flex-col gap-2">
-                  <div className="flex gap-3">
-                    <h3 className="text-2xl fw-semibold ">v3-lover123</h3>
-                    <p className="text-2xl">superb Brow.. 💕💕</p>
-                  </div>
-                  <div className="flex gap-3 text-xl fw-medium text-gray-700">
-                    <p>15min</p> <p className="cursor-pointer">1 like</p>{" "}
-                    <p className="cursor-pointer">Reply</p>
-                  </div>
-                  <p className="text-xl cursor-pointer">____View replies (3)</p>
+                <div className="">
+                  {isCommentLiked ? (
+                    <i
+                      onClick={() => setIsCommentLiked(!isCommentLiked)}
+                      className={`fa-solid fa-heart text-2xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
+                    ></i>
+                  ) : (
+                    <FontAwesomeIcon
+                      icon={faRegularHeart}
+                      className={`text-2xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
+                      onClick={() => setIsCommentLiked(!isCommentLiked)}
+                    />
+                  )}
                 </div>
               </div>
-
-              <div className="">
-                {isCommentLiked ? (
-                  <i
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                    className={`fa-solid fa-heart text-2xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
-                  ></i>
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faRegularHeart}
-                    className={`text-2xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                  />
-                )}
-              </div>
-            </div>
-            <div className="comment flex items-center justify-between">
-              <div className="flex gap-3">
-                <div className="proImg">
-                  <img
-                    className=" w-[4rem] h-[4rem] object-cover rounded-full"
-                    src="/v3_BeastPost4.png"
-                    alt=""
-                  />
-                </div>
-                <div className="txt flex flex-col gap-2">
-                  <div className="flex gap-3">
-                    <h3 className="text-2xl fw-semibold ">v3-lover123</h3>
-                    <p className="text-2xl">superb Brow.. 💕💕</p>
-                  </div>
-                  <div className="flex gap-3 text-xl fw-medium text-gray-700">
-                    <p>15min</p> <p className="cursor-pointer">1 like</p>{" "}
-                    <p className="cursor-pointer">Reply</p>
-                  </div>
-                  <p className="text-xl cursor-pointer">____View replies (3)</p>
-                </div>
-              </div>
-
-              <div className="">
-                {isCommentLiked ? (
-                  <i
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                    className={`fa-solid fa-heart text-2xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
-                  ></i>
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faRegularHeart}
-                    className={`text-2xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                  />
-                )}
-              </div>
-            </div>
-            <div className="comment flex items-center justify-between">
-              <div className="flex gap-3">
-                <div className="proImg">
-                  <img
-                    className=" w-[4rem] h-[4rem] object-cover rounded-full"
-                    src="/v3_BeastPost4.png"
-                    alt=""
-                  />
-                </div>
-                <div className="txt flex flex-col gap-2">
-                  <div className="flex gap-3">
-                    <h3 className="text-2xl fw-semibold ">v3-lover123</h3>
-                    <p className="text-2xl">superb Brow.. 💕💕</p>
-                  </div>
-                  <div className="flex gap-3 text-xl fw-medium text-gray-700">
-                    <p>15min</p> <p className="cursor-pointer">1 like</p>{" "}
-                    <p className="cursor-pointer">Reply</p>
-                  </div>
-                  <p className="text-xl cursor-pointer">____View replies (3)</p>
-                </div>
-              </div>
-
-              <div className="">
-                {isCommentLiked ? (
-                  <i
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                    className={`fa-solid fa-heart text-2xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
-                  ></i>
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faRegularHeart}
-                    className={`text-2xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                  />
-                )}
-              </div>
-            </div>
-            <div className="comment flex items-center justify-between">
-              <div className="flex gap-3">
-                <div className="proImg">
-                  <img
-                    className=" w-[4rem] h-[4rem] object-cover rounded-full"
-                    src="/v3_BeastPost4.png"
-                    alt=""
-                  />
-                </div>
-                <div className="txt flex flex-col gap-2">
-                  <div className="flex gap-3">
-                    <h3 className="text-2xl fw-semibold ">v3-lover123</h3>
-                    <p className="text-2xl">superb Brow.. 💕💕</p>
-                  </div>
-                  <div className="flex gap-3 text-xl fw-medium text-gray-700">
-                    <p>15min</p> <p className="cursor-pointer">1 like</p>{" "}
-                    <p className="cursor-pointer">Reply</p>
-                  </div>
-                  <p className="text-xl cursor-pointer">____View replies (3)</p>
-                </div>
-              </div>
-
-              <div className="">
-                {isCommentLiked ? (
-                  <i
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                    className={`fa-solid fa-heart text-2xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
-                  ></i>
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faRegularHeart}
-                    className={`text-2xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                  />
-                )}
-              </div>
-            </div>
-            <div className="comment flex items-center justify-between">
-              <div className="flex gap-3">
-                <div className="proImg">
-                  <img
-                    className=" w-[4rem] h-[4rem] object-cover rounded-full"
-                    src="/v3_BeastPost4.png"
-                    alt=""
-                  />
-                </div>
-                <div className="txt flex flex-col gap-2">
-                  <div className="flex gap-3">
-                    <h3 className="text-2xl fw-semibold ">v3-lover123</h3>
-                    <p className="text-2xl">superb Brow.. 💕💕</p>
-                  </div>
-                  <div className="flex gap-3 text-xl fw-medium text-gray-700">
-                    <p>15min</p> <p className="cursor-pointer">1 like</p>{" "}
-                    <p className="cursor-pointer">Reply</p>
-                  </div>
-                  <p className="text-xl cursor-pointer">____View replies (3)</p>
-                </div>
-              </div>
-
-              <div className="">
-                {isCommentLiked ? (
-                  <i
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                    className={`fa-solid fa-heart text-2xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
-                  ></i>
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faRegularHeart}
-                    className={`text-2xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                  />
-                )}
-              </div>
-            </div>
-            <div className="comment flex items-center justify-between">
-              <div className="flex gap-3">
-                <div className="proImg">
-                  <img
-                    className=" w-[4rem] h-[4rem] object-cover rounded-full"
-                    src="/v3_BeastPost4.png"
-                    alt=""
-                  />
-                </div>
-                <div className="txt flex flex-col gap-2">
-                  <div className="flex gap-3">
-                    <h3 className="text-2xl fw-semibold ">v3-lover123</h3>
-                    <p className="text-2xl">superb Brow.. 💕💕</p>
-                  </div>
-                  <div className="flex gap-3 text-xl fw-medium text-gray-700">
-                    <p>15min</p> <p className="cursor-pointer">1 like</p>{" "}
-                    <p className="cursor-pointer">Reply</p>
-                  </div>
-                  <p className="text-xl cursor-pointer">____View replies (3)</p>
-                </div>
-              </div>
-
-              <div className="">
-                {isCommentLiked ? (
-                  <i
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                    className={`fa-solid fa-heart text-2xl text-red-600 transition-all duration-600 ease-linear active:scale-[0.66]`}
-                  ></i>
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faRegularHeart}
-                    className={`text-2xl cursor-pointer active:scale-[0.78] transition-all duration-600 ease-linear`}
-                    onClick={() => setIsCommentLiked(!isCommentLiked)}
-                  />
-                )}
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="postImage block lg:hidden w-[100%] h-[73%]">
