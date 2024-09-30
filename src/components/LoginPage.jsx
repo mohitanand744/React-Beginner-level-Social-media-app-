@@ -28,12 +28,6 @@ const LoginPage = () => {
     dispatch({ type: "LOGIN_SUCCESS", payload: credentials });
   };
 
-  useEffect(() => {
-    if (loginError === "") {
-      navigate("/"); // Redirect to home if no login error
-    }
-  }, [loginError]);
-
   const handlePasswordShow = () => {
     setShowPassword(!showPassword);
   };
