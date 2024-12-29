@@ -2,8 +2,8 @@ import "./CSS/App.css";
 import "./CSS/Fonts.css";
 import NavFooter from "./components/NavFooter";
 import PostList from "./components/PostList";
-import RightSidebar from "./components/RightSidebar";
-import SideBar from "./components/SideBar";
+import RightSidebar from "./components/Common/RightSidebar";
+import SideBar from "./components/Common/SideBar";
 import Status from "./components/Status";
 
 function App() {

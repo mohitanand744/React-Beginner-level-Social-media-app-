@@ -22,13 +22,13 @@ const SearchUsers = () => {
   return (
     <div
       className={`searchResult flex flex-col ${
-        userSearchInput ? "top-32" : "-top-36"
-      } gap-4 w-[100%] bg-white py-10 px-40 z-[1] text-4xl fixed transition-all duration-300 ease-in-out`}
+        userSearchInput ? "top-36" : "-top-36"
+      } gap-4 right-0 w-full sm:w-[55rem] rounded-b-3xl bg-white py-10 px-40 z-[1] text-4xl fixed transition-all duration-300 ease-in-out`}
     >
       {user?.map((user, i) => (
         <div
           key={i}
-          className="user flex gap-3 cursor-pointer"
+          className="flex gap-3 cursor-pointer user"
           onClick={() => userProfileVisit(user?.username)}
         >
           <div className="profileImage">

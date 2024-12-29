@@ -5,8 +5,8 @@ import {
 } from "react-router-dom";
 import Layout from "../Layout";
 import App from "../App";
-import LoginPage from "../components/LoginPage";
-import SignUpPage from "../components/SignUpPage";
+import LoginPage from "../Auth/Pages/LoginPage";
+import SignUpPage from "../Auth/Pages/SignUpPage";
 import React, { Suspense } from "react";
 import ProtectedRoute from "./../Auth/ProtectedRoute";
 const Profile = React.lazy(() => import("../components/Profile"));

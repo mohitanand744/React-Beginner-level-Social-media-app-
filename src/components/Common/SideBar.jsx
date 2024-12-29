@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import useContextData from "../Custom/Hooks/useContextData";
+import useContextData from "./../../Custom/Hooks/useContextData";
 
 const SideBar = () => {
   const { togglesetting, toggleFun, dispatch, loginUser } = useContextData();
@@ -10,16 +10,16 @@ const SideBar = () => {
     <>
       <div
         onClick={toggleFun}
-        className={`fadedEffect ${togglesetting ? "container" : ""}`}
+        className={`fadedEffect  ${togglesetting ? "container" : ""}`}
       >
         <div
           onClick={(e) => e.stopPropagation()}
-          className={`sidebar_container md:border-4 md:border-[#84d6ff] border-l-0 fixed left-0 top-36 ${
+          className={`sidebar_container h-[100vh] md:border-4 md:border-[#84d6ff] border-l-0 fixed left-0 top-36 ${
             togglesetting ? "toggleSideBar" : ""
           }`}
         >
           <div className="profile_container">
-            <div className="profile_image_container border">
+            <div className="border profile_image_container">
               <img
                 onClick={(e) => {
                   toggleFun(e);
@@ -33,26 +33,26 @@ const SideBar = () => {
           </div>
           <div className="Explore_container">
             <h2 className="font-medium">Explore Panel</h2>
-            <div className="options cursor-pointer">
+            <div className="cursor-pointer options">
               <i className="fa-solid fa-gear"></i>
               <p>Profile</p>
             </div>
-            <div className="options cursor-pointer">
+            <div className="cursor-pointer options">
               <i className="fa-solid fa-users"></i>
               <p>Find Friends</p>
             </div>
-            <div className="options cursor-pointer">
+            <div className="cursor-pointer options">
               <i className="fa-solid fa-chart-simple"></i>
               <p>User analytics</p>
             </div>
           </div>
           <div className="Explore_container">
             <h2 className="font-medium">Setings</h2>
-            <div className="options cursor-pointer">
+            <div className="cursor-pointer options">
               <i className="fa-solid fa-gear"></i>
               <p>Setting</p>
             </div>
-            <div className="options cursor-pointer">
+            <div className="cursor-pointer options">
               <i className="fa-solid fa-gear"></i>
               <p>Account Setting</p>
             </div>
@@ -62,7 +62,7 @@ const SideBar = () => {
                 navigate("/login");
                 return;
               }}
-              className="options cursor-pointer"
+              className="cursor-pointer options"
             >
               <i className="fa-solid fa-right-from-bracket logouticon"></i>
               <p className="logout">Log Out</p>

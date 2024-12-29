@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import WarpingComponent from "./context/Contexts";
 import BottomNav from "./components/BottomNav";
-import Header from "./components/Header";
+import Header from "./components/Common/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import Loading from "./components/Loading";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
-import useContextData from "../Custom/Hooks/useContextData";
+import useContextData from "../../Custom/Hooks/useContextData";
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);

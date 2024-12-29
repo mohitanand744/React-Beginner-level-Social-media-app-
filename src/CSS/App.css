@@ -48,7 +48,6 @@ body {
   gap: 2rem;
 
   & .search_container {
-    width: 100%;
     height: 4.2rem;
     position: relative;
 
@@ -121,7 +120,6 @@ body {
 .sidebar_container {
   margin-top: 2rem;
   width: 33rem;
-  height: 83vh;
   overflow: hidden;
   background: #ffff;
   border-top-right-radius: 2rem;
@@ -514,7 +512,6 @@ body {
   .sidebar_container {
     margin-top: 0;
     position: fixed;
-    height: 90.8vh;
     left: -100%;
     position: fixed;
     border-radius: 0;
@@ -608,10 +605,6 @@ body {
 }
 
 @media screen and (width < 450px) {
-  .sidebar_container {
-    height: 92vh;
-  }
-
   .login {
     form {
       .logo {

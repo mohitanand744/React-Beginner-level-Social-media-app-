@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import RightSidebar from "./RightSidebar";
+import RightSidebar from "./Common/RightSidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faCamera } from "@fortawesome/free-solid-svg-icons";
 import useContextData from "../Custom/Hooks/useContextData";
-import SideBar from "./SideBar";
+import SideBar from "./Common/SideBar";
 import ViewPost from "./ViewPost";
 
 const Profile = () => {
@@ -82,10 +82,10 @@ const Profile = () => {
   return (
     <section className="flex">
       {/* Profile content column */}
-      <div className="profile relative w-full bg-white">
+      <div className="profile  md:mr-[27rem] xl:mr-[33rem]  relative w-full bg-white">
         <div className="profileCoverImg  h-[20rem] md:h-[27rem] relative flex justify-center w-full">
           <img
-            className="w-full h-full mt-32 object-cover shadow-sm"
+            className="object-cover w-full h-full mt-32 shadow-sm"
             src={profileCover || "/defaultCover.png"}
             alt="Profile Cover"
           />
@@ -139,7 +139,7 @@ const Profile = () => {
         </div>
 
         <div className="bio mt-60 sm:mt-72">
-          <p className="text-center mt-5 mb-2 text-4xl font-bold">{username}</p>
+          <p className="mt-5 mb-2 text-4xl font-bold text-center">{username}</p>
           <p className="text-center text-3xl mx-auto w-[40rem]">
             {usersProfile
               ? "Welcome to Your Profile | Working on custom captions."
@@ -155,15 +155,15 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="postContainer mt-10 mb-52 w-full">
+        <div className="w-full mt-10 postContainer mb-52">
           <div className="flex justify-center text-3xl font-semibold">
-            <ul className="nav nav-underline flex gap-5">
+            <ul className="flex gap-5 nav nav-underline">
               <li
                 className={`nav-item ${activeTab === "posts" ? "active" : ""}`}
                 onClick={() => setActiveTab("posts")}
               >
                 <a
-                  className="nav-link text-gray-700"
+                  className="text-gray-700 nav-link"
                   aria-current="page"
                   href="#"
                 >
@@ -174,7 +174,7 @@ const Profile = () => {
                 className={`nav-item ${activeTab === "reels" ? "active" : ""}`}
                 onClick={() => setActiveTab("reels")}
               >
-                <a className="nav-link text-gray-700" href="#">
+                <a className="text-gray-700 nav-link" href="#">
                   Reels
                 </a>
               </li>
@@ -182,7 +182,7 @@ const Profile = () => {
                 className={`nav-item ${activeTab === "about" ? "active" : ""}`}
                 onClick={() => setActiveTab("about")}
               >
-                <a className="nav-link text-gray-700" href="#">
+                <a className="text-gray-700 nav-link" href="#">
                   About
                 </a>
               </li>
@@ -195,7 +195,7 @@ const Profile = () => {
                   setActiveTab("posts");
                 }}
               >
-                <a className="nav-link text-gray-700" href="#">
+                <a className="text-gray-700 nav-link" href="#">
                   <i className="fa-solid fa-lock text-[#84d6ff] "></i> Only For
                   Members
                 </a>
@@ -205,12 +205,12 @@ const Profile = () => {
 
           {activeTab === "posts" ? (
             <>
-              <div className="posts w-full justify-center flex gap-2 flex-wrap mt-5">
+              <div className="flex flex-wrap justify-center w-full gap-2 mt-5 posts">
                 {posts.length > 0 ? (
                   posts.map((post, i) => (
                     <div key={i}>
                       <img
-                        className="w-60 h-60 md:w-80 md:h-80 object-cover cursor-pointer"
+                        className="object-cover cursor-pointer w-60 h-60 md:w-80 md:h-80"
                         src={post.imageUrl}
                         alt=""
                         onClick={() => setViewPost(post)}
@@ -218,7 +218,7 @@ const Profile = () => {
                     </div>
                   ))
                 ) : (
-                  <p className="text-red-600 text-2xl md:text-4xl font-bold">
+                  <p className="text-2xl font-bold text-red-600 md:text-4xl">
                     No posts available!?
                   </p>
                 )}
@@ -228,7 +228,7 @@ const Profile = () => {
 
           {activeTab === "reels" ? (
             <center>
-              <h1 className="text-red-500 text-3xl mt-5 font-semibold">
+              <h1 className="mt-5 text-3xl font-semibold text-red-500">
                 Still Working on {activeTab}...
               </h1>
             </center>
@@ -236,7 +236,7 @@ const Profile = () => {
 
           {activeTab === "about" ? (
             <center>
-              <h1 className="text-red-500 text-3xl mt-5 font-semibold">
+              <h1 className="mt-5 text-3xl font-semibold text-red-500">
                 Still Working on {activeTab}...
               </h1>
             </center>
@@ -250,9 +250,7 @@ const Profile = () => {
       <div className="xl:hidden">
         <SideBar />
       </div>
-      <div className="hidden lg:block lg:w-[42rem] xl:w-[42.4rem]">
-        <RightSidebar hight="bottom-0" borderRadius="rounded-none" />
-      </div>
+      <RightSidebar hight="bottom-0" borderRadius="rounded-none" />
     </section>
   );
 };
