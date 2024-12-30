@@ -51,7 +51,7 @@ export default function Header() {
           <div className=" profile_Details 2xl:hidden">
             <img
               onClick={toggleFun}
-              className="w-[6.3rem] md:w-[7rem] active:scale-50 transition-all duration-700 ease-linear"
+              className="w-[6.3rem] md:w-[6.2rem] active:scale-50 transition-all duration-700 ease-linear"
               src="/setting.png"
               alt=""
             />
