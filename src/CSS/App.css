@@ -82,7 +82,6 @@ body {
   }
 
   & .notification {
-    font-size: 3.6rem;
     position: relative;
     cursor: pointer;
 
@@ -251,8 +250,6 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-top: 11rem;
-  margin-bottom: 2rem;
   padding: 7rem 1.5rem;
   background: #fff;
   overflow-y: hidden;
@@ -562,11 +559,10 @@ body {
 }
 
 @media screen and (width < 738px) {
-  .status_container {
+  /*  .status_container {
     margin: 0;
-    margin-top: 8.2rem;
     padding-bottom: 8rem;
-  }
+  } */
 
   .post:nth-child(1) {
     border-top-left-radius: 0rem;

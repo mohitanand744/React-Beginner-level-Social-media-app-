@@ -4,8 +4,8 @@ const Status = () => {
   const { users, loginUser } = useContextData();
 
   return (
-    <div className="status_container md:border-4 md:border-[#84d6ff] lg:rounded-3xl w-full xl:w-[80rem]">
-      <div className="story my-story  cursor-pointer">
+    <div className="status_container mt-[9.5rem] md:mb-[2rem] md:mt-[11.4rem] md:border-4 md:border-[#84d6ff] lg:rounded-3xl w-full xl:w-[80rem]">
+      <div className="cursor-pointer story my-story">
         <div className="story_img">
           <img src={loginUser?.profileImage} alt="" />
         </div>
@@ -14,11 +14,11 @@ const Status = () => {
 
       {users.map((user, i) => {
         return (
-          <div key={i} className="story  cursor-pointer">
+          <div key={i} className="cursor-pointer story">
             <div className="story_img">
               <img src={user.profileImage} alt="" />
             </div>
-            <p className="StatusUserName font-semibold">{user.username}</p>
+            <p className="font-semibold StatusUserName">{user.username}</p>
           </div>
         );
       })}

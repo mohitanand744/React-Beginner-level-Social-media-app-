@@ -14,7 +14,7 @@ const SideBar = () => {
       >
         <div
           onClick={(e) => e.stopPropagation()}
-          className={`sidebar_container h-[100vh] md:border-4 md:border-[#84d6ff] border-l-0 fixed left-0 top-36 ${
+          className={`sidebar_container h-[100vh] xl:h-[80vh] md:border-4 md:border-[#84d6ff] border-l-0 fixed left-0 top-36 ${
             togglesetting ? "toggleSideBar" : ""
           }`}
         >

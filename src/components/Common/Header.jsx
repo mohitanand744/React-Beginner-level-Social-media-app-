@@ -25,11 +25,11 @@ export default function Header() {
       <div className="fixed top-0 z-50 w-full header_Container">
         <div className="logo_Container">
           <Link to={"/"} onClick={removeViewPost}>
-            <img src="/socialmediaLogo.png" alt="" />
+            <img className="w-64" src="/socialmediaLogo.png" alt="" />
           </Link>
         </div>
         <div className="flex items-center gap-4">
-          <div className="search_container">
+          <div className="hidden search_container sm:block">
             <input
               type="text"
               value={userSearchInput}
@@ -37,14 +37,21 @@ export default function Header() {
               placeholder="Search for friends..."
             />
           </div>
-          <div className="notification">
-            <IoIosNotifications className="notification" />
+          <div className="notification w-[5.5rem] active:scale-50 transition-all duration-700 ease-linear h-[5.5rem] flex justify-center items-center rounded-2xl bg-white cursor-pointer">
+            <IoIosNotifications className="text-[3rem] md:text-[4rem] notification" />
+          </div>
+          <div className="w-[5.5rem] sm:hidden active:scale-50 transition-all duration-700 ease-linear h-[5.5rem] flex justify-center items-center rounded-2xl bg-white cursor-pointer">
+            <img
+              className="w-[3rem] "
+              src="https://img.icons8.com/sf-black/50/search.png"
+              alt="search"
+            />
           </div>
 
-          <div className="profile_Details 2xl:hidden">
+          <div className=" profile_Details 2xl:hidden">
             <img
               onClick={toggleFun}
-              className="w-[7rem] active:rotate-[360deg] transition-all duration-700 ease-linear"
+              className="w-[6.3rem] md:w-[7rem] active:scale-50 transition-all duration-700 ease-linear"
               src="/setting.png"
               alt=""
             />
