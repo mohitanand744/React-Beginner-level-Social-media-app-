@@ -37,10 +37,10 @@ export default function Header() {
               placeholder="Search for friends..."
             />
           </div>
-          <div className="notification w-[5.5rem] active:scale-50 transition-all duration-700 ease-linear h-[5.5rem] flex justify-center items-center rounded-2xl bg-white cursor-pointer">
-            <IoIosNotifications className="text-[3rem] md:text-[4rem] notification" />
+          <div className="notification w-[5rem] active:scale-50 transition-all duration-700 ease-linear h-[5rem] flex justify-center items-center rounded-2xl bg-white cursor-pointer">
+            <IoIosNotifications className="text-[3rem] notification" />
           </div>
-          <div className="w-[5.5rem] sm:hidden active:scale-50 transition-all duration-700 ease-linear h-[5.5rem] flex justify-center items-center rounded-2xl bg-white cursor-pointer">
+          <div className="w-[5rem] sm:hidden active:scale-50 transition-all duration-700 ease-linear h-[5rem] flex justify-center items-center rounded-2xl bg-white cursor-pointer">
             <img
               className="w-[3rem] "
               src="https://img.icons8.com/sf-black/50/search.png"
